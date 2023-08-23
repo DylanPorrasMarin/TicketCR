@@ -14,12 +14,7 @@ namespace DataAccess.Dao
 
        // private string _connString = "Server=tcp:bdticketcr.database.windows.net,1433;Initial Catalog=bdticketcroficial;Persist Security Info=False;User ID=admin_ticket;Password=Djpm1203;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         private string _connString = "Server=DYLAN-LAP;Database=TicketCR;Trusted_Connection=True";
-        //private string _connString = "Server=LAPTOP-FN5GAS7U\\SQLEXPRESS;Database=TicketCR;Trusted_Connection=True";
-        //private string _connString = "Server=DYLAN-LAP;Database=TicketCR;Trusted_Connection=True";
-      // private string _connString = "Server=LAPTOP-FN5GAS7U\\SQLEXPRESS;Database=TicketCR;Trusted_Connection=True";
-        //private string _connString = "Server=LAPTOP-0BTFFL56;Database=TicketCR;Trusted_Connection=True";
-        //private string _connString = "Server=PAME;Database=TicketCR;Trusted_Connection=True";
-       //private string _connString = "Server=LAPTOP-6FOOJFRF;Database=TicketCR;Trusted_Connection=True";
+    
 
 
 

@@ -1,0 +1,161 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = TicketCR_UI
+build_property.RootNamespace = TicketCR_UI
+build_property.ProjectDir = C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\TicketCR_UI\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\TicketCR_UI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/HardcodersLanding/LandingHardcoders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGFyZGNvZGVyc0xhbmRpbmdcTGFuZGluZ0hhcmRjb2RlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_Escenario1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Fc2NlbmFyaW8xLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_Escenario1_precargado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Fc2NlbmFyaW8xX3ByZWNhcmdhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_Escenario2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Fc2NlbmFyaW8yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_Escenario2_precargado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Fc2NlbmFyaW8yX3ByZWNhcmdhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/AdministradorCrearUsuarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQWRtaW5pc3RyYWRvckNyZWFyVXN1YXJpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/AdministradorEditarUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQWRtaW5pc3RyYWRvckVkaXRhclVzdWFyaW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/AdministrarUsuarios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQWRtaW5pc3RyYXJVc3Vhcmlvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/AdquirirMembresia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQWRxdWlyaXJNZW1icmVzaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/ComprarBoletos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQ29tcHJhckJvbGV0b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/ConfiguracionEventos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQ29uZmlndXJhY2lvbkV2ZW50b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/CrearEvento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcQ3JlYXJFdmVudG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/EditarEvento.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcRWRpdGFyRXZlbnRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/Factura.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcRmFjdHVyYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/HistorialEventos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcSGlzdG9yaWFsRXZlbnRvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/InformeEventos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcSW5mb3JtZUV2ZW50b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/InformeGanancias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcSW5mb3JtZUdhbmFuY2lhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/InterfazMembresia.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcSW50ZXJmYXpNZW1icmVzaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/LandingTicketCR.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcTGFuZGluZ1RpY2tldENSLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/MembresiasCreadas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcTWVtYnJlc2lhc0NyZWFkYXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/MenuEventos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcTWVudUV2ZW50b3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/MenuEventosUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcTWVudUV2ZW50b3NVc3VhcmlvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/Parametros.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcUGFyYW1ldHJvcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/PerfilUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcUGVyZmlsVXN1YXJpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/RecuperarClave.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcUmVjdXBlcmFyQ2xhdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/Registro.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcUmVnaXN0cm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/RestablecerClave.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcUmVzdGFibGVjZXJDbGF2ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/ValidacionCuenta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcVmFsaWRhY2lvbkN1ZW50YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/TicketCR/ValidarBoleto.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0Q1JcVmFsaWRhckJvbGV0by5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/porra/Documents/TicketCR/Proyecto_HardCoders/TicketCR_UI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-gv3zd8988f

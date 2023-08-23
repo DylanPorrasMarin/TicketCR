@@ -22,7 +22,7 @@ builder.Services.AddCors(optiones => {
             policy.AllowAnyMethod(); //GET, POST , PUT , DELETE
 
         });
-
+    
 
 });
 

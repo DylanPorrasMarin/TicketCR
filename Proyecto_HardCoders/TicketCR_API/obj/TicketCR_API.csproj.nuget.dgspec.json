@@ -1,0 +1,322 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\TicketCR_API\\TicketCR_API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\AppLogic\\AppLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\AppLogic\\AppLogic.csproj",
+        "projectName": "AppLogic",
+        "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\AppLogic\\AppLogic.csproj",
+        "packagesPath": "C:\\Users\\porra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\AppLogic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\porra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DataAccess\\DataAccess.csproj"
+              },
+              "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Communication.Email": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Azure.Storage.Blobs": {
+              "target": "Package",
+              "version": "[12.17.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "QRCoder-ImageSharp": {
+              "target": "Package",
+              "version": "[0.9.0, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[6.10.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DataAccess\\DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DataAccess\\DataAccess.csproj",
+        "projectName": "DataAccess",
+        "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\porra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\porra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Communication.Email": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[6.10.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj",
+        "projectName": "DTO",
+        "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj",
+        "packagesPath": "C:\\Users\\porra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\porra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Communication.Email": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[6.10.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\TicketCR_API\\TicketCR_API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\TicketCR_API\\TicketCR_API.csproj",
+        "projectName": "TicketCR_API",
+        "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\TicketCR_API\\TicketCR_API.csproj",
+        "packagesPath": "C:\\Users\\porra\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\TicketCR_API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\porra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\AppLogic\\AppLogic.csproj": {
+                "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\AppLogic\\AppLogic.csproj"
+              },
+              "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj": {
+                "projectPath": "C:\\Users\\porra\\Documents\\TicketCR\\Proyecto_HardCoders\\DTO\\DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Azure.Communication.Email": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            },
+            "Twilio": {
+              "target": "Package",
+              "version": "[6.10.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

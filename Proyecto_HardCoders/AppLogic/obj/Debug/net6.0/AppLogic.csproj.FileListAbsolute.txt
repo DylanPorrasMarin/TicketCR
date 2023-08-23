@@ -1,0 +1,17 @@
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\AppLogic.deps.json
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\AppLogic.dll
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\AppLogic.pdb
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\DataAccess.dll
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\DTO.dll
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\DataAccess.pdb
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\bin\Debug\net6.0\DTO.pdb
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.csproj.AssemblyReference.cache
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.AssemblyInfoInputs.cache
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.AssemblyInfo.cs
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.csproj.CoreCompileInputs.cache
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.csproj.CopyComplete
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.dll
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\refint\AppLogic.dll
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\AppLogic.pdb
+C:\Users\porra\Documents\TicketCR\Proyecto_HardCoders\AppLogic\obj\Debug\net6.0\ref\AppLogic.dll
