@@ -1,0 +1,29 @@
+﻿body {
+    background-color: #ffa500 !important;
+}
+.editar-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 50px;
+    color: black;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+    border: 1px solid orange;
+}
+
+    .editar-btn:hover {
+        background: orange;
+        color: #fff;
+    }
+
+.card {
+    min-height:250px !important;
+}
+
+.card-img {
+    min-height: 250px;
+    object-fit: cover;
+}

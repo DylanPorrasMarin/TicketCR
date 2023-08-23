@@ -1,0 +1,64 @@
+﻿@model List<EventoModel>
+@{
+    ViewBag.Title = "HistorialEventos";
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.css" />
+
+    <link href="~/ticketCR/css/tablas/tablas.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <main>
+        <div class="container-fluid px-4" style="text-align: center">
+            <h1 class="mt-4">Boletos comprados</h1>
+                <div class="card mb-8">
+                    <div class="card-header">
+                        <i class="fas fa-table me-1"></i>
+                    Boletos comprados
+                    </div>
+                    <div class="card-body">
+                    
+                        <table id="datatablesSimple">
+                            <thead>
+
+                                <tr>
+                                <th>Imagen</th>
+                                    <th>Evento</th>
+                                    <th>Fecha</th>
+                                    <th>Descripción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var evento in Model)
+                                {
+                                    <tr>
+                                        <td><img src="@evento.Imagen1"></td>
+                                        <td>@evento.Nombre</td>
+                                        <td>@evento.FechaInicio.ToString("dd/MM/yyyy")</td>
+                                        <td>@evento.Descripcion</td>
+                                    </tr>
+                                }                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            </main>
+    <!--SECCION DE SCRIPTS-->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/ticketCR/js/historialEventos/historialEventos.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"> </script>
+    <script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"> </script>
+    </body>
+</html>

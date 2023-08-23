@@ -1,0 +1,63 @@
+﻿
+.forgot {
+    background-color: red;
+    padding: 12px;
+    border: 0px solid ;
+}
+
+.container {
+    border:0px solid ;
+}
+label {
+    color:white;
+}
+button {
+    margin-top:30px!important;
+
+}
+.text-muted {
+    color: white !important;
+    padding-bottom:30px !important;
+}
+.padding-bottom-3x {
+    padding-bottom: 72px !important;
+}
+.card-body {
+    border-radius: 20px;
+    background-color: orangered;
+
+}
+.card-footer {
+    background-color: orange;
+    color:white;
+}
+
+
+.form-control:focus {
+    color: black;
+
+    border: 2px solid orange;
+    outline: 0;
+    box-shadow: 0 0 0 0px #28a745;
+}
+
+.sign-btn { 
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: black;
+    font-weight: 200;
+    font-family: "Jost", sans-serif;
+    border: 1px solid orange;
+}
+
+    .sign-btn:hover {
+        background: orange;
+        color: #fff;
+    }
+
+
+.background-degradado {
+    background-color: rgba(0,0,0,0.30) !important;
+    padding: 20px;
+    border-radius: 20px !important;
+}

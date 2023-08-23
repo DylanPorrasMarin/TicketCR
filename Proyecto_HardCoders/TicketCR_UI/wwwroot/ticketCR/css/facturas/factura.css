@@ -1,0 +1,72 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.invoice {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+    .invoice h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .invoice .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .invoice img {
+        max-width: 400px;
+    }
+
+    .invoice .cond {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+        .invoice .cond div {
+            flex: 1;
+        }
+
+    .invoice table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 30px;
+    }
+
+    .invoice th,
+    .invoice td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+    }
+
+    .invoice tfoot th {
+        text-align: right;
+    }
+
+    .invoice button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: orange;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;     
+    }
+
+        .invoice button:hover {
+            color: #fff !important;
+        }

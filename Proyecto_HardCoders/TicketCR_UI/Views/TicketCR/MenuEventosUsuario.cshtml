@@ -1,0 +1,107 @@
+﻿@model List<EventoModel>
+@{
+    ViewBag.Title = "";
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.css" />
+
+    <link href="~/ticketCR/css/tablas/tablas.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <main>
+        <div style="padding-bottom:100px;" class="eventos container-fluid px-4">
+            <div class="card mb-8" style="background-color: rgba(0,0,0,0.35)">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Menu Eventos
+                </div>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+
+                    @foreach (var evento in Model)
+                    {
+
+
+                        <div class="card-container box">
+                            <div class="card-flip" style="background-color:orangered; border-radius:10px;">
+                                <!-- Card Front -->
+                                <div class="card front" style="background-color:orangered; border-radius:10px;">
+                                    <img style="height: 100%; border-radius:10px;" class="card-img" src="@evento.Imagen1" alt="..." />
+                                    <div class="card-block" style="background-color: rgba(0,0,0,0.35); padding:5px; border-radius:10px;">
+                                        <h5 class="fw-bolder" style="color: white;">@evento.Nombre</h5>
+                                        <p style="color: white;">@evento.FechaInicio</p>
+                                        
+                                     
+                                            <button type="button" class="editar-btn" onclick="window.location.href='@Url.Action("ComprarBoletos", "TicketCR", new { id = evento.IdEvento })'">Comprar</button>
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+                @*<div  class="card-body">
+                  
+                    <table  id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre evento</th>
+                                <th>Fecha inicio</th>
+                                <th>Fecha final</th>
+                                <th>Descripcion</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var evento in Model)
+                            {
+                                if (evento.Inactivo==false)
+                                {
+                                    <tr>
+                                        <td><img src="@evento.Imagen1"></td>
+                                        <td>@evento.Nombre</td>
+                                        <td>@evento.FechaInicio.ToString("dd/MM/yyyy")</td>
+                                        <td>@evento.FechaFinal.ToString("dd/MM/yyyy")</td>
+                                        <td>@evento.Descripcion</td>
+                                        <td>
+                                            <button type="button" class="editar-btn" onclick="window.location.href='@Url.Action("ComprarBoletos", "TicketCR", new { id = evento.IdEvento })'">Comprar</button>
+                                        </td>
+                                    </tr>
+                                }
+                           
+                            }
+                        </tbody>
+                    </table>
+                </div>*@
+            </div>
+        </div>
+    </main>
+
+
+
+    <!--SECCION DE SCRIPTS-->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/ticketCR/js/MenuEventos/menuEventosUsuarios.js" defer></script> 
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"> </script>
+    <script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"> </script>
+    <!-- Buttons JS -->
+   
+
+</body>
+</html>

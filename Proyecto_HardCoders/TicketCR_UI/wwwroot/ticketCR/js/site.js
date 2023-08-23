@@ -1,0 +1,19 @@
+﻿//API URL DESARROLLO
+const API_URL_BASE_DESARROLLO = `https://localhost:7255`;
+//URL FRONTEND DESARROLLO
+const URL_FRONTEND_DESARROLLO = `https://localhost:7176`;
+
+//API URL PRODUCCION
+const API_URL_BASE_PRODUCCION = `https://ticketcr-api.azurewebsites.net`;
+//URL FRONTEND PRODUCCION
+const URL_FRONTEND_PRODUCCION= `https://ticketcr.azurewebsites.net`;
+
+//VARIABLE PARA REDIRRECIONAR ENTRE VISTAS DEL FRONTED
+const pathRedireccionFrontEnd = `${URL_FRONTEND_DESARROLLO}/TicketCR/`;
+
+//VARIABLE PARA HACER SOLICITUDES DESDE EL SERVIDOR (BACKEND-API)
+const pathRedireccionBackEnd = `${API_URL_BASE_DESARROLLO}`;
+
+
+
+

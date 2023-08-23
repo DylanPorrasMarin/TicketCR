@@ -1,0 +1,45 @@
+﻿body {
+    background-color: #ffa500 !important;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para hacer la tabla responsive */
+@media only screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    /* Elimina los bordes verticales */
+    td {
+        border: none;
+    }
+
+        /* Agrega un borde alrededor de las celdas */
+        td:before {
+            content: attr(data-label);
+            display: inline-block;
+            font-weight: bold;
+            width: 120px;
+        }
+}

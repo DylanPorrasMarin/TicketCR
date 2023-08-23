@@ -1,0 +1,372 @@
+﻿@using System.Text.Json;
+@model EventoModel
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor Accesor;
+
+@{
+    ViewBag.Title = "ComprarBoletos";
+    Layout = "../Shared/_Dashboard.cshtml";
+
+    var IdUsuario = Context.Session.GetInt32("idUser") ?? 0;
+
+    // Crear el diccionario de tipos de boleto
+    var diccionarioTiposBoleto = new Dictionary<string, string>
+{
+    { "1", "Particular" },
+    { "2", "Estudiante" },
+    { "3", "Adulto mayor" },
+    { "4", "Regalía" },
+    { "5", "Virtual" }
+};
+    var comision = 0.0f;  // Declarar como float
+    var impuesto = 0.0f;  // Declarar como float
+
+    @if (ViewData["TiposUnicosBoletos"] is List<string> tiposUnicosBoletos)
+    {
+        var tiposUnicosBoletosJson = JsonSerializer.Serialize(tiposUnicosBoletos);
+        <script>var tiposUnicosBoletosJson = @Html.Raw(tiposUnicosBoletosJson);</script>
+    }
+
+    @foreach (var boleto in Model.Boletos)
+
+    {
+        comision = (float)boleto.Comision;
+        impuesto = (float)boleto.Impuesto;
+
+
+    }
+    
+
+
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Comprar boleto</title>
+    <!-- FAVICON-->
+    <link type="image/x-icon" href="assets/favicon.ico" rel="icon" />
+    <!-- LINKS CSS-->
+    <link href="~/ticketCR/css/compraBoletos/mainCompraBoletos.css" rel="stylesheet" />
+    <link href="~/ticketCR/css/compraBoletos/formulario.css" rel="stylesheet" />
+    <link  href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcTdK3QXXI70frsQxlCdWVEiL5IHp8-70XLRcomId3JFBHJdh01oKJ6JxEe_oKj-zK6FgPq_tesHB1eS&currency=USD"></script>
+</head>
+<body id="pdf">
+    <!--SECCION: EVENTO Y COMPRAS DE BOLETOS-->
+    <section class="">
+        <div class="container ">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+
+                <!--START: CARRUSEL IMAGENES EVENTO-->
+                <div class="col-md-6">
+                    <div class="carousel" data-carousel>
+
+                        <button class="btn prev btn-carrusel" data-carousel-btn="prev"><span class="favicon">&#x2190;</span></button>
+                        <button class="btn next btn-carrusel" data-carousel-btn="next"><span class="favicon">&#x2192;</span></button>
+                        <ul data-slides>
+
+                            <li class="slide" data-active>
+                                <img src="@Model.Imagen1" alt="Imagen del evento">
+                            </li>
+
+                            <li class="slide" data-active>
+                                <img src="@Model.Imagen2" alt="Imagen del evento">
+                            </li>
+
+                            <li class="slide" data-active>
+                                <img src="@Model.Imagen3" alt="Imagen del evento">
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!--END: CARRUSEL IMAGENES EVENTO-->
+
+                <!--START: INFORMACION DE EVENTO-->
+                <div class="col-md-6">
+
+                    <h1 class="display-5 fw-bolder">@Model.Nombre</h1>
+
+                    <p class="descripcion">
+                      @Model.Descripcion
+                    </p>
+
+                    <h5>Eslogan</h5>
+                    <p>@Model.Eslogan</p>
+
+                    <h5>Fecha inicio</h5>
+                    <p>@Model.FechaInicio</p>
+
+                    <h5>Fecha finalización</h5>
+                    <p>@Model.FechaFinal</p>
+
+                    <h5>Contacto</h5>
+                    <p>Correo electrónico: @Model.Usuario.Correo <br />Teléfono: @Model.Usuario.Telefono.</p>
+
+
+                    @if (Model.Modalidad != "1")
+                    {
+                        <h5>Ubicación del evento</h5>
+                        <div class="width-40 " style="width:400px; height:250px;">
+                            <div id="map"></div>
+                        </div>
+                    }
+                 
+
+                    <h5>Restricciones</h5>
+                    <p>@Model.Restricciones</p>
+
+                    <h5>Modalidad</h5>
+                    @if (@Model.Modalidad != "1")
+                    {
+                        <p>Presencial.</p>
+
+                    }else
+                    {
+                        <p>Virtual.</p>
+                    }
+
+
+                    <h5>Boletos</h5>
+
+                    <div class="boletos-container">
+                        @foreach (var tipoBoleto in (List<string>)ViewData["TiposUnicosBoletos"])
+                        {
+                            var boleto = Model.Boletos.FirstOrDefault(b => b.TipoBoleto == tipoBoleto);
+                            if (boleto != null)
+                            {
+                                <div class="boleto-item">
+                                    <p><strong>@diccionarioTiposBoleto[boleto.TipoBoleto]:</strong> $@boleto.Costo</p>
+                                </div>
+                            }
+                        }
+                    </div>
+                    <p>
+                        <strong>Impuesto:</strong><span id="impuesto-amount">@impuesto</span><span style="color:black">%</span><br />
+                        <strong>Comisión:</strong><span id="impuesto-amount">@comision</span><span style="color:black">%</span>
+                    </p>
+
+                    <p></p>
+
+                    @if (Model.Grafica !=0)
+                    {
+                    
+                    
+                    }else{
+                        <p style="color: orangered">Click para comprar:</p>
+                        <button id="btn-agregar-boletos-virtuales" class="sign-btn flex-shrink-0" type="button">
+                                Comprar
+                        </button>
+                    }
+      
+                  <!--END: LA CANTIDAD DE BOLETOS A ADQUIRIR 1-5 -->
+                </div>
+                <!--END: INFORMACION DE EVENTO-->
+            </div>
+   
+            <!--START: COMPRA DE BOLETOS SECCIONES GENERADAS DINAMICAMENTE-->
+            <form class="container  mb-2 mt-5" id="formulario-general-compra-boletos" novalidate>
+                <div class="text-center mt-3" id="formularios-container">
+                    <!-- Contenido estático aquí -->
+                    <div class="invalid-feedback"></div>
+                    <div class="formulario-boletos d-flex justify-content-center">
+                        <div class="row">
+                            <section class="py-5">
+                                <div class="container px-4 px-lg-5 my-5">
+                                    <div class="row gx-4 gx-lg-5 align-items-center">
+                                        <div class="col-md-6 p-3">
+                                            <div class="form-wrap">
+                                                @if (@Model.Grafica == 1)
+                                                {
+                                                    <h6>Haz click sobre el escenario para eligir tu asiento en el evento:</h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="max-width:400px">
+                                                            <div class="form-group" id="plantilla1-container">
+
+                                                                <img src="../img/shared/escenario01.png" class="plantilla" id="plantilla1-preview" alt="Imagen 1" style="width:100%; height:25vh;" data-bs-toggle="modal" data-bs-target="#modalEscenario1-precargado">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                                else if (Model.Grafica == 0)
+                                                {}
+                                                else
+                                                {
+                                                    <h6>Haz click sobre el escenario para eligir tu asiento en el evento:</h6>
+                                                    <div class="row">
+                                                        <div class="col-md-12" style="max-width:400px">
+                                                            <div class="form-group" id="plantilla2-container">
+                                                                <label for="plantilla2">Haz click sobre la imagen para configurar evento:</label>
+                                                                <img src="../img/shared/escenario02.png" class="plantilla" id="plantilla2-preview" alt="Imagen 2" style="width:100%; height:25vh;" data-bs-toggle="modal" data-bs-target="#modalEscenario2-precargado">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+
+                                        @if (Model.Grafica != 0)
+
+                                        {
+                                            <div class="col-md-6 p-3">
+                                                    <div id="seccion-generada"></div>
+
+                                                    <div class="" id="total-container">
+                                                        <strong>Total a pagar: </strong>$<span id="total-amount">0</span>
+                                                        <div id="paypal-button-presencial-container"></div>
+                                                    </div>
+                                                </div>
+                                        }
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+
+                @if (Model.Grafica == 0)
+                {
+                    <div class="modal fade" id="boletosModal" tabindex="-1" role="dialog" aria-labelledby="boletosModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg text-center" role="document">
+                            <div class="modal-content text-center">
+                                <div class="modal-header text-center">
+                                    <h5 class="modal-title" id="boletosModalLabel">Compra Boletos Virtuales</h5>
+                                    <button id="cerrar-modal" type="button" class="sign-btn" data-dismiss="modal">
+                                        <span aria-hidden="true">&times</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="container-virtual">
+                                        <div class="row">
+                                            @for (int i = 0; i < 4; i++)
+                                            {
+                                                <div class="col-md-6">
+                                                    <div class="text-center">
+                                                        <div class="form-line pad-bg mb-2">
+                                                            <div class="card text-center custom-form">
+                                                                <div class="card-header">
+                                                                    Titular @(i + 1)
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <div class="form-group">
+                                                                        <label for="email-compra-boleto-{i}" style="color:black">Correo electrónico</label>
+                                                                        <input type="email" id="email-compra-boleto" class="form-control input-lg  email-field" placeholder="usuario@dominio.com" onchange="validarFormulario(this)" />
+                                                                        <label for="tipo-boleto-{i}" style="color:black">Seleccionar boleto</label>
+                                                                        <select name="boleto" id="select-boleto-{i}" class="select-valor form-control text-center select-boleto" onchange="capturarInfoBoletosVirtuales(this)" required>
+                                                                            <option value="0">Tipo de boleto</option>
+                                                                            @foreach (var tipoBoleto in Model.Boletos)
+                                                                            {
+                                                                                var boleto = tipoBoleto;
+                                                                                if (boleto != null && boleto.EstadoComprado == false)
+                                                                                {
+                                                                                    <option value="@boleto.IdBoleto" data-id="@boleto.IdBoleto" data-costo="@boleto.Costo" data-comision="@boleto.Comision" data-impuesto="@boleto.Impuesto"> @diccionarioTiposBoleto[boleto.TipoBoleto]</option>
+                                                                                }
+                                                                            }
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="paypal-estilos text-center" id="total-container">
+                                        <p><strong>Impuesto:</strong><span style="color:black">%</span><span id="impuesto-amount">@impuesto</span></p>
+                                        <p><strong>Comisión:</strong><span style="color:black">%</span><span id="impuesto-amount">@comision</span></p>
+                                        <p><strong>Total a pagar: </strong><span style="color:green">$</span><span id="total-amount">0</span></p>
+                                        <div id="paypal-button-virtual-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+              
+                }
+            </form>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <input type="hidden" id="latitud-input" name="latitud" value="@Model.Latitud">
+    <input type="hidden" id="longitud-input" name="longitud" value="@Model.Longitud">
+    <input type="hidden" id="grafica-model" name="longitud" value="@Model.Grafica">
+    <input type="hidden" id="nombre-evento" value="@Model.Nombre" />
+    <input type="hidden" id="id-usuario-comprador" value="@IdUsuario" />
+    <input type="hidden" id="id-evento" value="@Model.IdEvento" />
+    <input type="hidden" id="link" value="@Model.Link" />
+    <input type="hidden" id="fechaInicio-evento" value="@Model.FechaInicio" />
+    <input type="hidden" id="fechaFinal-evento" value="@Model.FechaFinal" />
+    <input type="hidden" id="comision" value="@comision" />
+    <input type="hidden" id="impuesto" value="@impuesto" />
+
+ 
+    <!--END:SECCION: EVENTO Y COMPRAS DE BOLETOS-->
+    
+
+
+
+    <div id="QRContent"></div>
+
+
+
+    @if (@Model.Grafica == 1)
+    {
+
+        <partial name="_Escenario1_precargado" />
+    }
+    else
+    {
+        <partial name="_Escenario2_precargado" />
+    }
+
+
+
+    <script>
+        
+        var comision =@comision;
+        var impuesto=@impuesto;
+        var boletosData = @Html.Raw(Json.Serialize(Model.Boletos));
+
+
+        console.log('BoletodData',boletosData)
+        // Mapeo de tipos de boletos por número
+       
+    </script>
+
+
+
+
+    <!--SECCION DE SCRIPTS-->
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/ticketCR/js/compraBoletos/compraBoletos.js" defer></script>
+    <script src="~/ticketCR/js/compraBoletos/compraBoletosVirtual.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARvTpwIJm0YHxlqtsT3eLcUNAuQbmLCU0&callback=initMap" defer></script>
+    <!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARvTpwIJm0YHxlqtsT3eLcUNAuQbmLCU0&callback=initMap&v=weekly" defer></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.0/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+     
+</body>
+</html>
+

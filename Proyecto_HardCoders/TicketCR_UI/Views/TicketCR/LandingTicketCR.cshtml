@@ -1,0 +1,453 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    Layout = "";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>TicketCR</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="~/ticketCR/Img/shared/favicon.png" rel="icon">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="~/landingTicket/assets/vendor/aos/aos.css" rel="stylesheet">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link href="~/landingTicket/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="~/landingTicket/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="~/landingTicket/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="~/landingTicket/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="~/landingTicket/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+    <link href="~/landingTicket/assets/css/style.css" rel="stylesheet" asp-append-version="true">
+
+
+</head>
+
+<body>
+
+    <header id="header" class="fixed-top">
+        <div class="header-overlay">
+
+      
+        <div class="container d-flex align-items-center">
+
+            <!--  <h1 class="logo me-auto"><a href="index.html"></a></h1> -->
+         
+          <a href="#" class="logo me-auto"><img src="~/ticketCR/Img/shared/logo-ticketCR-blanco.png" alt="" class="img-fluid"></a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
+                    <li><a class="nav-link scrollto" href="#about">Acerca de</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Servicios</a></li>
+                    <li><a class="nav-link scrollto" href="#team">Equipo</a></li>
+                   
+                    <li><a class="nav-link scrollto" href="#contact">Contacto</a></li>
+       
+                    <li class="dropdown">
+                        <a href="#" class="getstarted scrollto landing-ticket-anchor"><span>Comenzar</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                            <li class="d-flex align-items-center justify-content-center"><a href="@Url.Action("Login", "TicketCR")" class="m-auto">Iniciar Sesión</a></li>
+                            <li class="d-flex align-items-center justify-content-center"><a href="@Url.Action("Registro", "TicketCR")">Registrarse</a></li>
+                            <li class="d-flex align-items-center justify-content-center"><a href="@Url.Action("MenuEventos", "TicketCR")">Lista de Eventos</a></li>
+                            <li class="d-flex align-items-center justify-content-center"><a href="@Url.Action("LandingHardcoders", "HardcodersLanding")">Equipo de desarrollo</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+        </div>
+    </header><!-- Fin Cabecera -->
+    <!-- ======= Sección Principal ======= -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-overlay"></div>
+        <div class="carousel-banner">
+            <h2 class="carousel-title">
+                ENCUENTRE AQUÍ LOS MEJORES EVENTOS
+            </h2>
+            <a class="carousel-banner-button mt-4" href="@Url.Action("MenuEventos", "TicketCR")"><span>Ver los Eventos</span></a>
+        </div>
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/landingTicket/assets/img/carousel1.jpg" class="d-block w-100" alt="...">
+            
+            </div>
+            <div class="carousel-item">
+                <img src="~/landingTicket/assets/img/carousel2.jpg" class="d-block w-100" alt="...">
+             
+            </div>
+            <div class="carousel-item">
+                <img src="~/landingTicket/assets/img/carousel3.jpg" class="d-block w-100" alt="...">
+          
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Fin Sección Principal -->
+
+ 
+
+  <main id="main">
+
+        <!-- ======= Acerca De Nosotros Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Acerca de Nosotros</h2>
+                </div>
+
+                <div class="footer-newsletter">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 newsletter-text">
+                                <p class="">Trabajamos por un mundo más entretenido y conectado. Contribuimos con diversas empresas y emprendedores nacionales, facilitando la promoción y venta de boletos para sus eventos, y ofreciendo una experiencia única a los asistentes. Nuestros distintos planes de suscripción se adaptan a tus necesidades y presupuesto, promoviendo el crecimiento del mercado de entretenimiento y el disfrute de cada momento.</p>
+
+                            </div>
+                        </div>
+                    </div>
+
+            </div>
+        </section><!-- End Acerca De Nosotros Section -->
+        <!-- ======= start why us Section ======= -->
+        <section id="why-us" class="why-us section-bg">
+            <div class="container-fluid" data-aos="fade-up">
+
+                <div class="row">
+
+                    <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                        <div class="content">
+                            <h3>La organización de eventos <strong>llevada al próximo nivel</strong></h3>
+                            <p>
+                                Nos distinguimos por nuestra dedicación, innovación y atención al detalle en cada evento que organizamos. Nuestra meta es superar tus expectativas y crear momentos inolvidables.
+                            </p>
+                        </div>
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li>
+                                    <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> ¿Por qué somos la mejor opción para tu evento? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Contamos con un equipo profesional y apasionado por los eventos, con experiencia en la planificación, organización y ejecución de todo tipo de celebraciones. Nos adaptamos a tus necesidades y deseos para crear un evento verdaderamente único.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> ¿Cómo garantizamos la calidad de nuestro servicio? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Valoramos la calidad por encima de todo. Nos asesoramos con los mejores expertos, para garantizar que cada aspecto de tu evento sea de la más alta calidad.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> ¿Nuestro compromiso con cada cliente? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            Creemos que cada cliente es único y cada evento debe ser un reflejo de su personalidad y visiones. Nos comprometemos a trabajar contigo en cada paso del camino, garantizando una comunicación fluida y la satisfacción total con los resultados.
+                                        </p>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    
+
+
+                </div>
+
+            </div>
+        </section><!-- End why us Section -->
+
+    <!-- ======= Skills Section ======= -->
+        <!-- ======= Servicios Section ======= -->
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Servicios</h2>
+                    <p>Ofrecemos una amplia gama de servicios para satisfacer todas tus necesidades en la organización de eventos. Nuestra dedicación y compromiso con la calidad nos aseguran brindar una experiencia excepcional.</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-aspect-ratio-fill"></i></div>
+                            <h4><a href="">Venta de Boletos</a></h4>
+                            <p>Realizaremos toda la gestión de la venta de tus boletos.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-bookmark-star"></i></div>
+                            <h4><a href="">Servicios de membresías</a></h4>
+                            <p>También tenemos diferentes tipos de membresías con diferentes beneficios para nuestros clientes.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bi bi-award-fill"></i></div>
+                            <h4><a href="">ChatBot</a></h4>
+                            <p>Contamos con un chatBot en línea 24/7 para ayudarte con lo que necesites.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-layer"></i></div>
+                            <h4><a href="">Promoción de Eventos</a></h4>
+                            <p>Nos encargaremos de proporcionar tu evento para que tus invitados estén enterados.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Servicios Section -->
+
+    
+        <!-- ======= Team Section ======= -->
+        <section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Nuestro equipo</h2>
+                    <p>Somos un grupo de entusiastas de eventos con diversos antecedentes y una pasión común por crear experiencias memorables.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="https://images.unsplash.com/photo-1556745753-b2904692b3cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=773&q=80" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Dalia Pérez</h4>
+                                <span>Director Ejecutivo</span>
+                                <p>Con amplia experiencia en la industria de eventos, Dalia es la fuerza impulsora detrás de nuestro enfoque innovador.</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>María García</h4>
+                                <span>Gerente de Producto</span>
+                                <p>María está a cargo de nuestro desarrollo de producto, asegurándose de que nuestros servicios satisfacen las necesidades de nuestros usuarios.</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 mt-4" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="member d-flex align-items-start">
+                            <div class="pic"><img src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWgelXHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Roberto López</h4>
+                                <span>Director de Tecnología</span>
+                                <p>Roberto es el genio tecnológico de nuestro equipo, asegurando que nuestra plataforma se mantenga actualizada y funcione sin problemas.</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Team Section -->
+
+        <!-- ======= Sección de Preguntas Frecuentes ======= -->
+        <section id="faq" class="faq section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Aquí hemos recopilado algunas de las preguntas más comunes que nuestros clientes nos hacen. Si tienes alguna otra duda, no dudes en contactarnos.</p>
+                </div>
+
+                <div class="faq-list">
+                    <ul>
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">¿Qué tipo de eventos se pueden promocionar? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                <p>
+                                    En TICKETCR se pueden promocionar una amplia variedad de eventos de diversas categorías; entretenimiento, teatro, deportes, conciertos, eventos religiosos entre otros...
+                                </p>
+                            </div>
+                        </li>
+
+       
+
+                        <li data-aos="fade-up" data-aos-delay="200">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">¿Tienen espacios propios para realizar eventos? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    No, como organizadores de eventos, no poseemos locaciones propias. Sin embargo, tenemos una amplia red de asociados y lugares con los que trabajamos regularmente y que podemos reservar en tu nombre.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li data-aos="fade-up" data-aos-delay="300">
+                            <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">¿Puedo personalizar mi evento? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                                <p>
+                                    Por supuesto, nos esforzamos por hacer que cada evento sea único y adaptado a tus necesidades. Estaremos encantados de trabajar contigo para personalizar el evento de la manera que desees.
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <!-- Fin de la Sección de Preguntas Frecuentes -->
+        <!-- ======= Sección de Contacto ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contacto</h2>
+                    <p>Si tienes alguna pregunta o sugerencia, o si estás interesado en organizar un evento con nosotros, no dudes en ponerte en contacto. Estamos aquí para ayudarte a crear experiencias inolvidables.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-12 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Ubicación:</h4>
+                                <p>Calle Las Rosas, Barrio Escalante San José, 10101, Costa Rica</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Correo:</h4>
+                                <p>info@ticketCR.com</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>Llámanos:</h4>
+                                <p>+506 2222 2222</p>
+                            </div>
+
+                         <div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=374&amp;height=400&amp;hl=en&amp;q=Barrio Escalante Costa Rica&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://connectionsgame.org/">Connections NYT</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section><!-- Fin de la Sección de Contacto -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+                    <div class="col-12 footer-contact">
+                        <h3 class="text-light">TicketCR</h3>
+                        <p class="text-light">
+                            Calle Las Rosas, Barrio Escalante<br>
+                            San José, 10101<br>
+                            Costa Rica<br><br>
+                            <strong>Teléfono:</strong> +506 2222 2222<br>
+                            <strong>Email:</strong> info@ticketCR.com<br>
+                        </p>
+                    </div>
+
+
+
+
+        </div>
+      </div>
+    </div>
+
+  
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="~/landingTicket/assets/vendor/aos/aos.js"></script>
+  @* <script src="~/landingTicket/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script> *@
+  <script src="~/landingTicket/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="~/landingTicket/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="~/landingTicket/assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="~/landingTicket/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="~/landingTicket/assets/vendor/php-email-form/validate.js"></script>
+              
+  <!-- Template~/landingTicket/ Main JS File -->
+    <script src="~/landingTicket/assets/js/main.js" asp-append-version="true"></script>
+             
+</body>
+
+</html>
+
+

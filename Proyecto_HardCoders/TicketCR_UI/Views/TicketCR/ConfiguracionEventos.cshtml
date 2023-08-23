@@ -1,0 +1,75 @@
+﻿@model List<EventoModel>
+@{
+    ViewBag.Title = "Configuracion Eventos";
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.css" />
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="~/ticketCR/css/tablas/tablas.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <main>
+        <div class="container-fluid px-4" style="text-align: center">
+            <h1 class="mt-4"> Configuración eventos</h1>
+            <div class="card mb-8">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Configuración eventos
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Nombre evento</th>
+                                <th>Fecha inicio</th>
+                                <th>Fecha final</th>
+                                <th>Descripción</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            @foreach (var evento in Model)
+                            {
+                                <tr>
+                                    <td><img src="@evento.Imagen1"></td>
+                                    <td>@evento.Nombre</td>
+                                    <td>@evento.FechaInicio.ToString("dd/MM/yyyy")</td>
+                                    <td>@evento.FechaFinal.ToString("dd/MM/yyyy")</td>
+                                    <td class="descripcion"><p class="p-table">@evento.Descripcion</p></td>
+                                    <td>
+                                        <button type="button" class="editar-btn" onclick="window.location.href='@Url.Action("EditarEvento", "TicketCR",new { id = evento.IdEvento })'">Editar</button>
+                                    </td>
+                                </tr>
+                            }
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--SECCION DE SCRIPTS-->
+    
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/ticketCR/js/configuracionEventos/configuracionEventos.js" defer></script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"> </script>
+    <script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"> </script>
+
+</body>
+</html>

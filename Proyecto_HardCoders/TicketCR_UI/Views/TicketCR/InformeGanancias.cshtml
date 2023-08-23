@@ -1,0 +1,95 @@
+﻿@model List<InformeMembresiasModel>;
+@inject IHttpContextAccessor Accesor;
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewBag.Title = "InformeEventos";
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.css" />
+    <title>Dashboard - SB Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="~/ticketCR/css/historialEventos/historialEventos.css" rel="stylesheet" />
+</head>
+<body class="sb-nav-fixed">
+
+    <main>
+        <div class="container-fluid px-10" style="text-align: center">
+            <h1 class="mt-4">Informe ganancias membresías </h1>
+            <div class="row">
+                <div class="col-xl-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-area me-1"></i>
+                            Ingresos mensuales de las membresías
+                        </div>
+                        <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-chart-bar me-1"></i>
+                            Gráfico membresías vendidads.
+                        </div>
+                        <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Informe ganancias membresías.
+                </div>
+                <div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Membresía</th>
+                                <th>Mes</th>
+                                <th>Membresías adquiridas</th>
+                                <th>Costo de la Membresía</th>
+                                <th>Ganancias</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var informe in Model)
+                            {
+                                <tr>
+                                    <td>@informe.NombreMembresia</td>
+                                    <td>@informe.Mes</td>
+                                    <td>@informe.MembresiasAd</td>
+                                    <td>@informe.Costo</td>
+                                    <td>$@informe.Ganancias</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="~/ticketCR/js/informeMembresias/graficosMembresias.js"></script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+    <script src="~/ticketCR/js/informeEventos/datosTabla.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"> </script>
+    <script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"> </script>
+
+</body>
+</html>

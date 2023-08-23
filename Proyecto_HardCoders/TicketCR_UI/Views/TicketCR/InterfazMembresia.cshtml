@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Interfaz Membresia</title>
+
+    <link href="~/ticketCR/css/interfazMembresia/interfazMembresia.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="title-wrapper">
+        <h1>Crear membresía</h1>
+    </div>
+    <div class="main-wrapper">
+    <div class="mycontainer">
+
+        <div class="container">
+   
+        <form method="post" id="formulario-crear-membresia">
+            <div class="form-group">
+                <label for="nombre">Nombre de la membresía:</label>
+                <input type="text" id="nombre" name="Nombre" >
+            </div>
+            <div class="form-group">
+                <label for="cantidad-boletos">Cantidad límite de boletos por evento:</label>
+                <input type="number" id="cantidad-boletos" name="CantidadBoletos" >
+            </div>
+            <div class="form-group">
+                <label for="cantidad-eventos">Cantidad límite de eventos (mensual):</label>
+                <input type="number" id="cantidad-eventos" name="CantidadEventos" >
+            </div>
+            <div class="form-group">
+                <label for="costo-membresia">Costo de membresía (mensual):</label>
+                <input type="number" step="0.01" id="costo-membresia" name="CostoMembresia" >
+            </div>
+            <button type="submit">Crear membresía</button>
+        </form>
+    </div>
+    </div>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/ticketCR/js/interfazMembresia/interfazMembresia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+
+</body>
+</html>

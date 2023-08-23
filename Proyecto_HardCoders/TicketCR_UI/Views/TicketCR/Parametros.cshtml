@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Configuración Parámetros</title>
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="~/ticketCR/css/parametros/parametros.css" rel="stylesheet" asp-append-version="true" />
+</head>
+<body>
+
+   
+    <div class="title-wrapper">
+        <h1>Configuración parámetros</h1>
+    </div>
+    <div class="main-wrapper">
+        <div class="mycontainer">
+
+            <div class="container">
+
+                <form method="post" action="" id="formulario-enviar-parametros">
+                    <div class="form-group">
+                        <label for="impuestos">Impuestos (%):</label>
+                        <input type="number" id="impuestos" name="Impuestos" min="0" max="100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comisiones">Comisiones (%):</label>
+                        <input type="number" id="comisiones" name="Comisiones" min="0" max="100" required>
+                    </div>
+                    <button type="submit" onclick="return validarFormulario();">Actualizar parámetros</button>
+                </form>
+            </div>
+        </div>
+    </div>
+            <script src="~/lib/jquery/dist/jquery.js"></script>
+            <script src="~/ticketCR/js/site.js"></script>
+            <script src="~/ticketCR/js/parametros/parametros.js" asp-append-version="true"></script>
+            <script src="~/ticketCR/js/alertas.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+ 
+
+</html>

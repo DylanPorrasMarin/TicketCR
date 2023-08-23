@@ -1,0 +1,96 @@
+﻿.editar-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: black;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+    border: 1px solid orange;
+}
+    .editar-btn:hover {
+        background: orange;
+        color: #fff;
+    }
+
+.eliminar-btn {
+    display: inline-block;
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: red;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+    border: 1px solid orange;
+}
+
+    .eliminar-btn:hover {
+        background: red;
+        color: #fff;
+    }
+
+body {
+    background-color: #ffa500 !important;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    max-width: 150px !important;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.descripcion {
+    overflow-y: auto !important;
+}
+.p-table {
+    max-height:50px !important;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.eventos {
+    margin-top: 15px !important;
+
+}
+
+/* Estilos para hacer la tabla responsive */
+@media only screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    th {
+        text-align: center;
+    }
+
+    /* Elimina los bordes verticales */
+    td {
+        border: none;
+    }
+
+        /* Agrega un borde alrededor de las celdas */
+        td:before {
+            content: attr(data-label);
+            display: inline-block;
+            font-weight: bold;
+            width: 120px;
+        }
+
+
+
+}

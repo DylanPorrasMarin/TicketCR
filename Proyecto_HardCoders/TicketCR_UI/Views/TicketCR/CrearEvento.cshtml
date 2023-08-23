@@ -1,0 +1,365 @@
+﻿@model UsuarioModel
+
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor Accesor;
+
+
+@{
+    ViewBag.Title = "CrearEvento";
+    Layout = "../Shared/_Dashboard.cshtml";
+    var IdUsuario = Accesor.HttpContext.Session.GetInt32("idUser");
+    var IdMembresia = Accesor.HttpContext.Session.GetInt32("idMembresia");
+    var CantidadEventos = Accesor.HttpContext.Session.GetInt32("cantidadEventos");
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="~/ticketCR/Img/shared/favicon.png" rel="icon">
+    <title>Crear evento</title>
+    <link href="~/ticketCR/css/evento/crearEvento.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css" integrity="sha512-yVvxUQV0QESBt1SyZbNJMAwyKvFTLMyXSyBHDO4BG5t7k/Lw34tyqlSDlKIrIENIzCl+RVUNjmCPG+V/GMesRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+</head>
+<body>
+
+    <div class="container">
+        <div class="col-md-12 header">
+            <h1>Crear evento</h1>
+        </div>
+        <div class="form-wrap">
+
+            <form class="background-degradado" id="formulario-crear-evento">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="nombre-label" for="name">Nombre</label>
+                            <input type="text" name="name" id="nombre" placeholder="Nombre del evento" class="form-control" required>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="fecha-inicio-label" for="start-date">Fecha inicio</label>
+                            <input type="text" name="start-date" id="fecha-inicio" class="form-control" min="<?= date('Y-m-d') ?>" placeholder="Fecha inicio">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="fecha-final-label" for="end-date">Fecha Final</label>
+                            <input type="text" name="end-date" id="fecha-final" class="form-control" placeholder="Fecha Final">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="slogan-label" for="email">Eslogan</label>
+                            <input type="text" name="slogan" id="slogan" placeholder="Eslogan del evento" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label id="Modalidad-label" for="Modalidad">Modalidad</label>
+                            <select name="Modalidad-select" id="modalidad" class="form-control" required>
+                                <option selected disabled value="0">Tipo de modalidad</option>
+                                <option value="1">Virtual</option>
+                                <option value="2">Presencial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="categoria">Categoría</label>
+                            <select name="categoria" id="categoria" class="form-control" required>
+                                <option selected disabled value="0">Tipo categoría</option>
+                                <option value="1">Deportivo</option>
+                                <option value="2">Teatro</option>
+                                <option value="3">Concierto</option>
+                                <option value="4">Educativo</option>
+                                <option value="5">Cine</option>
+                                <option value="6">Festival</option>
+                                <option value="7">Arte y Cultura</option>
+                                <option value="8">Conferencia</option>
+                                <option value="9">Gastronomía</option>
+                                <option value="10">Moda</option>
+                                <option value="11">Tecnología</option>
+                                <option value="12">Empresarial</option>
+                                <option value="13">Religioso</option>
+                                <option value="14">Celebraciones y Aniversarios</option>
+                                <option value="15">Medio ambiente y Sostenibilidad</option>
+                                <option value="16">Entretenimiento</option>
+                                <option value="17">Ferias y Exposiciones</option>
+                                <option value="18">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+
+                    <div id="contenedor-mapa-ubicacion" class="col-md-12">
+                        <div class="form-group">
+                            <label id="ubicacion-label" for="ubicacion">Ubicación</label>
+                            <div class="width-40" style="width:100%; height:250px; margin-bottom:30px; border-radius:50px;">
+                                <div style="border-radius:10px;" id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <textarea id="descripcion" class="form-control" name="descripcion" placeholder="Ingresa la descripción del evento..."></textarea>
+                        </div>
+                    </div>
+          
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Restricciones</label>
+                            <textarea id="restricciones" class="form-control" name="restricciones" placeholder="Ingresa las restricciones del evento..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12" style="width:100%">
+                        <div class="container-link-evento">
+                            <div class="form-group">
+                                <label>Link evento virtual</label>
+                                <input id="link" class="form-control" name="link" placeholder="https://meet.google.com"></input>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECCION CREAR BOLETOS PARA EVENTO -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="accordion accordion-flush" id="accordionFlushExample1">
+                            <div style="border-radius:10px;" class="accordion-item">
+                                <h2 style="border-radius:10px;" class="accordion-header" id="flush-headingOne">
+                                    <button style="border-radius:10px; margin-bottom:20px;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                        Crear boletos para evento
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample1">
+                               
+                                    <div class="form-wrap">
+                                        <div class="background-degradado">
+                                            <div class="row">
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <div id="mensaje-error" style="color: red;"></div>
+                                                        <label for="tipoBoleto-0">Tipo de boleto</label>
+                                                        <select name="tipoBoleto-0" id="tipoBoleto-0" class="tipo-Boleto form-control" required>
+                                                            <option selected disabled value="0">Tipo de boleto</option>
+                                                            <option value="1">Particular</option>
+                                                            <option value="2">Estudiante</option>
+                                                            <option value="3">Adulto mayor</option>
+                                                            <option value="4">Regalía</option>
+                                                            <option value="5">Virtual</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="cantidadBoletos-label">Cantidad</label>
+                                                        <input type="number" name="cantidadBoletos0" id="cantidadBoletos0" class="cantidad-boleto form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="costoBoleto">Costo($)</label>
+                                                        <input type="number" name="costoBoleto0" id="costoBoleto0" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <!--Se insertan nuevos campos de inputs para boletos dinámicamente-->
+                                                <div id="nuevos-boletos"></div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <button type="button" id="agregar-tipo-boleto-nuevo" class="sign-btn">Agregar otro tipo de boleto</button>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <button type="button" id="eliminar-tipo-boleto-nuevo" class="sign-btn eliminar-tipo-boleto-nuevo">Eliminar tipo de boleto</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TERMINA SECCION CREAR BOLETOS PARA EVENTO -->
+                <!-- SECCION SELECCION DE PLANTILLA -->
+                <div id="contenedor-plantilla-grafica" class="row">
+                    <div class="col-md-12">
+                        <div class="accordion accordion-flush" id="accordionFlushExample2">
+                            <div style="border-radius:10px;" class="accordion-item">
+                             
+                                <h2 style="border-radius:10px;" class="accordion-header" id="flush-headingTwo">
+                                    <button style="border-radius:10px; margin-bottom:20px;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        Plantilla gráfica para evento
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample2">
+                                        <div class="form-wrap">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="background-degradado">
+                                                        <label for="plantilla-selector">Selecciona una plantilla:</label>
+                                                        <select id="plantilla-selector" class="form-select">
+                                                            <option value="0">Tipo de plantilla</option>
+                                                            <option value="1">Plantilla 1</option>
+                                                            <option value="2">Plantilla 2</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="form-group plantilla-container" id="plantilla1-container">
+                                                        <label for="plantilla1">Haz click sobre la imagen para configurar evento:</label>
+                                                        <img class="plantilla" id="plantilla1-preview" src="~/ticketCR/Img/shared/escenario01.png" alt="Imagen 1" style="width:100%; height:25vh;" data-bs-toggle="modal" data-bs-target="#modalEscenario1">
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="form-group plantilla-container" id="plantilla2-container">
+                                                        <label for="plantilla2">Haz click sobre la imagen para configurar evento:</label>
+                                                        <img class="plantilla" id="plantilla2-preview" src="~/ticketCR/Img/shared/escenario02.png" alt="Imagen 2" style="width:100%; height:25vh;" data-bs-toggle="modal" data-bs-target="#modalEscenario2">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TERMINA SECCION SELECCION DE PLANTILLA -->
+                <!-- COMIENZA SECCION DE SELECCION DE IMÁGENES PARA EL EVENTO -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="accordion accordion-flush" id="accordionFlushExample3">
+                            <div style="border-radius: 10px;" class="accordion-item">
+                                <h2 style="border-radius: 10px;" class="accordion-header" id="flush-headingThree">
+                                    <button style="border-radius: 10px; margin-bottom: 20px;" class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                        Seleccionar imágenes para evento
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample3">
+                                    <div class="form-wrap">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="grid-x grid-padding-x">
+                                                    <div class="form-group">
+                                                        <p>
+                                                            <label for="upload_imgs" class="button hollow">Selecciona las nuevas imágenes para tu evento (3): PNG-JPG</label>
+                                                            <!-- <input class="form-control" type="file" id="upload_imgs" name="upload_imgs[]" multiple accept=".png, .jpg" />  -->
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="grid-x grid-padding-x">
+                                                    <div class="form-group">
+
+                                                        <img src="" class="img-preview-thumb" id="preview-imagen-evento-1" />
+                                                        <button type="button" id="btn-foto1" class="sign-btn">Elegir imagen</button>
+
+                                                        <!-- <div class="quote-imgs-thumbs quote-imgs-thumbs--hidden" id="img_preview" aria-live="polite"></div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="grid-x grid-padding-x">
+                                                    <div class="form-group">
+
+                                                        <img src="" class="img-preview-thumb" id="preview-imagen-evento-2" />
+                                                        <button type="button" id="btn-foto2" class="sign-btn">Elegir imagen</button>
+
+                                                        <!-- <div class="quote-imgs-thumbs quote-imgs-thumbs--hidden" id="img_preview" aria-live="polite"></div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="grid-x grid-padding-x">
+                                                    <div class="form-group">
+
+                                                        <img src="" class="img-preview-thumb" id="preview-imagen-evento-3" />
+                                                        <button type="button" id="btn-foto3" class="sign-btn">Elegir imagen</button>
+
+                                                        <!-- <div class="quote-imgs-thumbs quote-imgs-thumbs--hidden" id="img_preview" aria-live="polite"></div>-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TERMINA SECCION DE SELECCION DE IMÁGENES PARA EL EVENTO --><!-- TERMINA SECCION TERCER ACCORDION -->
+                <!-- BOTÓN PARA CREAR EVENTO -->
+                <div class="row">
+                    <center class="col-md-12">
+                        <button type="submit" id="btn-crear-evento" class="sign-btn text-center">Crear evento</button>
+                    </center>
+                </div>
+                <!-- TERMINA BOTÓN PARA CREAR EVENTO -->
+            </form>
+        </div>
+    </div>
+ 
+    <!-- Inputs ocultos para almacenar latitudes y longitudes y otros atributos -->
+    <input type="hidden" id="id-usuario" name="id-usuario" value="@IdUsuario">
+    <input type="hidden" id="id-rol" name="id-usuario" value="@Model.Rol">
+    <input type="hidden" id="id-membresia" name="id-membresia" value="@Model.IdMembresia">
+    <input type="hidden" id="cantidad-eventos" name="id-membresia" value="@Model.CantidadEventos">
+    <input type="hidden" id="latitud-input" name="latitud">
+    <input type="hidden" id="longitud-input" name="longitud" >
+
+    <!-- LLAMADO DE PLANTILLAS-->
+    <partial name="_Escenario1" /> 
+    <partial name="_Escenario2" />
+  
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+    <script src="~/ticketCR/js/evento/crearEvento.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARvTpwIJm0YHxlqtsT3eLcUNAuQbmLCU0&callback=initMap" defer></script>
+    <!--DATA PICKER CALENDAR-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!--MOMENT PARA DAR FORMATOS A FECHAS-->
+    <script src="https://cdn.jsdelivr.net/npm/moment/moment.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+﻿@model List<UsuarioModel>
+@{
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Administración de usuarios</title>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="~/ticketCR/css/administrarUsuarios/administrarUsuarios.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.11.4/datatables.min.css" />
+
+    <link href="~/ticketCR/css/tablas/tablas.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!--Cambios tabla-->
+    <main style="padding-bottom:20px;">
+        <h1 class="header text-center">Administrar usuarios</h1>
+        <div class="container-fluid px-4">
+            <div class="card mb-8">
+                <div class="card-header">
+                    <i class="fas fa-table me-1"></i>
+                    Usuarios
+                </div>
+                <div class="card-body">
+                    <table id="datatablesSimple">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cédula</th>
+                                <th>Correo</th>
+                                <th>Teléfono</th>
+                                <th>Opciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var usuario in Model)
+                            {
+                                <tr>
+                                    <td>@usuario.Nombre</td>
+                                    <td>@usuario.Cedula</td>
+                                    <td>@usuario.Correo</td>
+                                    <td>@usuario.Telefono</td>
+                                    <td>
+                                        <button type="button" class="editar-btn" onclick="window.location.href='@Url.Action("AdministradorEditarUsuario", "TicketCR", new { id = usuario.IdUsuario })'">Editar</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--SECCION DE SCRIPTS-->
+ 
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/ticketCR/js/administrarUsuarios/administrarUsuarios.js"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"> </script>
+    <script src=" https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"> </script>
+   
+    </body>
+
+</html>
+
+                  
+
+                    

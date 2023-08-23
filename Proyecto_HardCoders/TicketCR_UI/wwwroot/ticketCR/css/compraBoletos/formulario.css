@@ -1,0 +1,66 @@
+﻿.formulario-compra-boletos {
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+ul li.list-group-item {
+    list-style: decimal inside;
+    display: list-item;
+}
+
+.form-control {
+    background-color: orangered;
+}
+
+    .form-control:focus {
+        background-color: #ffffff;
+    }
+
+.right {
+    float: right;
+}
+
+.formbtns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.popover {
+    background-color: #f8f9fa;
+}
+
+.popover-header {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.select-tipo-boleto {
+    width: 100% !important;
+}
+
+.form-group input {
+    background-color:white;
+    text-align:center !important;
+}
+
+.card-header {
+    background-color:orange;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.media-width {
+    width: 50%;
+}

@@ -1,0 +1,71 @@
+﻿body {
+    color: white;
+}
+
+
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh !important;
+
+}
+
+
+.sign-btn {
+    display: inline-block;
+    padding: 6px 20px;
+    border-radius: 50px;
+    color: black;
+    transition: none;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: "Jost", sans-serif;
+    transition: 0.3s;
+    border: 1px solid orange;
+}
+
+    .sign-btn:hover {
+        background: orange;
+        color: #fff;
+    }
+
+.background-degradado {
+    background-color: rgba(0,0,0,0.35) !important;
+    padding: 20px;
+    border-radius: 20px !important;
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
+}
+
+
+.bg-ticketCR {
+    background-color: #ff340b !important;
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+
+
+a{
+    text-decoration : none;
+    color: white !important;
+}
+
+a:hover {
+    color: orange !important;
+}
+
+p{
+    color: white !important;
+}
+
+h4 {
+    color: white !important;
+    font-weight: bold;
+}
+
+label {
+    color: white !important;
+    font-weight: bold;
+}

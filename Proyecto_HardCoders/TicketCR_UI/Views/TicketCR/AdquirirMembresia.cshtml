@@ -1,0 +1,90 @@
+﻿@model List<MembresiaModel>
+
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor Accesor;
+
+@{
+
+    ViewBag.Title = "AdquirirMembresias";
+    Layout = "../Shared/_Dashboard.cshtml";
+
+    var IdUsuario = Accesor.HttpContext.Session.GetInt32("idUser");
+    // Obtener el ID de membresía único del usuario (si existe)
+    int idMembresiaUsuario = Model.FirstOrDefault(m => m.IdMembresiaUsuario != 0)?.IdMembresiaUsuario ?? 0;
+    // Buscar el nombre de la membresía correspondiente al ID de membresía de usuario
+    string nombreMembresiaUsuario = Model.FirstOrDefault(m => m.IdMembresia == idMembresiaUsuario)?.NombreMembresia;
+
+    var membresiaUsuario = Model.FirstOrDefault(m => m.IdMembresia == idMembresiaUsuario);
+
+    // Obtener el estado de la membresía del usuario
+    bool estadoMembresiaUsuario = membresiaUsuario?.Estado==false;
+}
+
+
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/ticketCR/css/adquirirMembresia/adquirirMembresia.css" />
+    <link rel="stylesheet" href="~/ticketCR/css/adquirirMembresia/formularioAdquirirMembresia.css" />
+    <script src="https://www.paypal.com/sdk/js?client-id=AcTdK3QXXI70frsQxlCdWVEiL5IHp8-70XLRcomId3JFBHJdh01oKJ6JxEe_oKj-zK6FgPq_tesHB1eS&currency=USD"></script>
+</head>
+<body>
+
+
+    <div class="container">
+
+        <div class="text-center"><h1>Membresías</h1></div>
+        <div class="container p-5">
+            @if (idMembresiaUsuario > 0)
+            {
+                <p>Tu membresía actual es: <strong style="background-color:orangered; padding:4px; border-radius:10px;">@nombreMembresiaUsuario</strong></p>
+            }
+            @if (estadoMembresiaUsuario)
+            {
+                <center style=" width:100%;">
+                    <p><mark style="border-radius:10px;"><strong>@nombreMembresiaUsuario</strong> se encuentra desactivada en el sistema <strong>¡Adquiere una de las siguientes!</strong></mark></p>
+                </center>
+            }
+         
+            <div class="row">
+                @foreach (var membresia in Model)
+                {
+                    @if (membresia.Estado)
+                    {
+                        <div class="col-lg-4 col-md-12 mb-4">
+                            <div class="card card1 h-100">
+                                <div class="card-body body-color" style="background-color:orange; border-radius:20px;">
+                                    <div style="background-color:rgba(0,0,0,0.35); border-radius:20px; padding:30px;">
+                                        <h5 class="card-title">@membresia.NombreMembresia</h5>
+                                        <br /><br />
+                                        <p><span class="h2">$@membresia.Costo</span>\mes</p>
+                                        <br /><br />
+                                        <ul>
+                                            <li>Límite de eventos: 1-@membresia.CantidadEventos</li>
+                                            <li>Cantidad de boletos: @membresia.CantidadBoletos por evento</li>
+                                        </ul>
+
+                                        <button class="btn btn-primary" onclick="actualizarPayPal(@membresia.IdMembresia, @membresia.Costo, @membresia.Impuestos,'@membresia.NombreMembresia')">Adquirir</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+    <div id="paypal-button-container"></div>
+    <input type="hidden" id="id-usuario" value="@IdUsuario" />
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="~/ticketCR/js/adquirirMembresia/adquirirMembresia.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+ 
+
+</body>
+</html>

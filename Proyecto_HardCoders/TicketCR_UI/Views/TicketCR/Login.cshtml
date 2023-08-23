@@ -1,0 +1,95 @@
+﻿@model DTO.Usuario
+@{
+    ViewBag.Title = "Login";
+    Layout = "";
+}
+
+
+
+    <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Iniciar Sesión</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <!-- Favicons -->
+        <link href="~/ticketCR/Img/shared/favicon.png" rel="icon">
+        <!-- Bootstrap icons-->
+        <link href="~/lib/bootstrap/dist/css/bootstrap-grid.min.css" rel="stylesheet" />
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+        <!-- Core theme CSS (includes Boo)-->
+    <link href="~/ticketCR/css/login/login.css" rel="stylesheet" asp-append-version="true" />
+    </head>
+<body>
+    @using (Html.BeginForm("Login", "TicketCR", FormMethod.Post, new { id = "formulario-iniciar-sesion" }))
+    {
+
+        <section class="gradient-custom login-wrapper">
+            <div class="container py-3 h-75">
+                <div class="row d-flex justify-content-center align-items-center h-50">
+                    <div class="card bg-ticketCR col-1 col-md-1 col-lg-1 col-xl-4" style="border-radius: 1rem;">
+                        <div class="background-degradado">
+                            <div class="text-center">
+
+                                <div class="mb-md-2 mt-md-1 pb-2
+">
+                                    <a href="#" class="logo me-auto"><img src="~/landingTicket/assets/img/logo.png" alt="" class="img-fluid"></a>
+                                    <h4 class="fw-bold mb-3 text-uppercase">Iniciar Sesión</h4>
+                                    <div>
+                                        @if (ViewBag.Message != null)
+                                        {
+                                            <div id="validations" style="color: black">@ViewBag.Message</div>
+                                            <script>
+                                                Swal.fire({
+                                                    title: '¡Error!',
+                                                    text: '@ViewBag.Message',
+                                                    icon: 'error',
+                                                    confirmButtonText: 'Aceptar'
+                                                });
+                                            </script>
+                                        }
+                                    </div>
+                                    <div class="form-outline form-white mb-2">
+                                        @Html.LabelFor(u => u.Correo, "Correo")
+                                        @Html.TextBoxFor(u => u.Correo, new { @class = "form-control",id = "correoUsuario"  })
+                                    </div>
+
+                                    <div class="form-outline form-white mb-2">
+                                        @Html.LabelFor(u => u.Clave, "Clave")
+                                        @Html.PasswordFor(u => u.Clave, new { @class = "form-control", id = "claveUsuario" })
+                                    </div>
+
+                                    <p class="small mb-4 pb-lg-2"><a href=@Url.Action("recuperarClave","TicketCR")><strong>Recuperar Contraseña</strong></a></p>
+
+                                    <button id="btnLogin" type="submit" class="sign-btn"><strong>Ingresar</strong></button>
+                                </div>
+                                <div>
+                                    <a href="@Url.Action("Registro", "TicketCR")"><strong>Registrarse</strong></a>
+                                    <a>     </a>
+                                    <a href="@Url.Action("LandingTicketCR", "TicketCR")"><strong>Regresar</strong></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+}
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/ticketCR/js/site.js"></script>
+        <!-- Asegúrate de que login.js se incluye después de jQuery -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="~/ticketCR/js/alertas.js"></script>
+        <script src="~/ticketCR/js/login/login.js"></script>
+
+   
+       
+
+</body>
+</html>
+

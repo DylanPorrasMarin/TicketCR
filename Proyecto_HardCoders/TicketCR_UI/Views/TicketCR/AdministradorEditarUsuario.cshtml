@@ -1,0 +1,139 @@
+﻿@model UsuarioModel
+@{
+    ViewBag.Title = "AdministradorEditarUsuario";
+    Layout = "../Shared/_Dashboard.cshtml";
+}
+
+
+<!--CREAR JS DE EDITAR USUARIO Y COPIAR VISTA DE PERFIL USAURIO Y ADAPTARLA, USAR EL USARIOMODEL PARA MOSTRAR LA INFROAMCION DEL USUARIO DESEADA EN LOS INPUTS -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Perfil usuario</title>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="~/ticketCR/Img/shared/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+        <!-- Core theme CSS (includes Boo)-->
+        <link rel="stylesheet" href="~/ticketCR/css/administradorEditarUsuario/administradorEditarUsuario.css" asp-append-version="true" />
+</head>
+
+<body>
+    <section class="padding-25 wrapper justify-content-center align-center ">
+        <div class=" width-90">
+            <h1 class=" header">Editar usuarios</h1>
+            <form name="formulario-registro" id="formulario-registro" class="padding-25 " onsubmit="return validarFormulario()">
+                <div class=" background-degradado  wrapper padding-top-50 justify-content-center align-center">
+
+                    <div class="width-40 ">
+                        <div class="fields-container">
+                            <label for="nombre" class="">Nombre</label><br>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre" name="nombre" required value="@Model.Nombre"><br>
+
+                            
+                            <label for="apellidos">Apellidos</label><br>
+                            <input type="text" class="form-control" id="apellidos" placeholder="Ingrese sus apellidos" name="apellidos" value="@Model.Apellidos" required><br>
+
+                            <label for="identificacion" class="">Número de identificación</label><br>
+                            <input type="text" class="form-control" id="identificacion" placeholder="Formato: 101110111" name="identificacion" min="0" oninput="this.value = Math.abs(this.value)" maxlength="9" required value="@Model.Cedula"><br>
+
+                            <label for="nacimiento" class="">Fecha de nacimiento</label><br>
+                            <input type="text" class="form-control" id="nacimiento" name="nacimiento" min="1903-01-01" max="2005-12-31" required value="@Model.FechaNacimiento"><br>
+                           
+                            <label for="correo" class="">Correo electrónico</label><br>
+                            <input type="email" class="form-control" id="correo" name="correo" placeholder="ejemplo@yahoo.com" required disabled value="@Model.Correo"><br>
+
+                        </div>
+
+                    </div>
+                    <div class="width-40 ">
+                        <br><label for="password" class="">Ingrese su contraseña</label><br>
+                        <input type="password" class="form-control" id="password1" name="password" placeholder="Mínimo 8 caracteres " required value="@Model.Clave"><br><br>
+
+                        <label for="password2" class="">Ingrese nuevamente su contraseña</label><br>
+                        <input type="password" class="form-control" id="password2" name="password2" placeholder="Ingrese nuevamente su contraseña" required value="@Model.Clave"><br><br>
+
+                        <label for="telefono" class="">Ingrese su número de teléfono</label><br>
+                        <input type="text" class="form-control" id="telefono" placeholder="Formato: 88888888" name="telefono" min="0" oninput="this.value = Math.abs(this.value)" maxlength="8" required value="@Model.Telefono"><br><br>
+
+                        <label for="tipoCuenta">Tipo de cuenta:</label><br>
+                        <select class=" big-form-control" name="tipoCuenta" id="tipoCuenta" required>
+                            <option hidden>Seleccione el tipo</option>
+                            <option value="3">Usuario comprador</option>
+                            <option value="2">Gestor eventos</option>
+                            <option value="1">Administrador</option>
+                        </select><br><br>
+
+                    </div>
+                    <div class="container-login100-form-btn">
+                        
+                        <h4 class=" ">Arrastra el marcador para proporcionar una dirección:</h4>
+                        <div id="map"></div>
+
+
+                        <input type="hidden" class="form-control justify-content-center align-center " id="latitude" readonly required value="@Model.Latitud">
+
+                        <input type="hidden" class="form-control  justify-content-center align-center" id="longitude" readonly required value="@Model.Longitud">
+
+                        <div style="padding-top:20px;" class="row">
+                            <center class="col-md-4">
+                                <button id="btn-enviar-form" type="button" class="sign-btn" onclick="validarFormulario()">Actualizar</button>
+                            </center>
+                            <center class="col-md-4">
+                                
+                                @if (Model.Estado == true)
+                                {
+                                    <button type="button" class="sign-btn" onclick="desactivarUsuario(@Model.IdUsuario)">Desactivar</button>
+                                }
+                                else
+                                {
+                                    <button type="button" class="sign-btn" onclick="activarUsuario(@Model.IdUsuario)">Activar</button>
+                                }
+                            </center>
+                            <center class="col-md-4">
+                                <button type="button" class="sign-btn" onclick="window.history.back();">Cancelar</button>
+                            </center>
+
+                        </div>
+
+                 
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARvTpwIJm0YHxlqtsT3eLcUNAuQbmLCU0&callback=initMap" defer></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            var rol = '@Model.Rol';
+            $("#tipoCuenta").val(rol);
+        });
+        var latitud = '@Model.Latitud';
+        var longitud = '@Model.Longitud';
+        // var IdUsuario = '@Model.IdUsuario';
+        var rol = '@Model.Rol';
+
+      
+
+    </script>
+    <script src="~/ticketCR/js/site.js"></script>
+    <script src="~/ticketCR/js/administradorEditarUsuario/administradorEditarUsuario.js" asp-append-version="true"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!--DATA PICKER CALENDAR-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" defer></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" defer></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- <h1>EJEMPPLO PARA USAR EL MODEL EN LA VISTA SE HACE ASI: @Model.Nombre </h1>
+    <h2>ASI SE MUESTRA LA INFO DEL USUARIO SELECCIONADO Y QUEDA DINAMICAMENTE</h2>-->
+</body>
+
+
+</html>

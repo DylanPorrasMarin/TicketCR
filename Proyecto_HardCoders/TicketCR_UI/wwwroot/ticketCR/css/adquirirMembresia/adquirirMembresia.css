@@ -1,0 +1,46 @@
+﻿
+.card {
+    border:0px solid transparent;
+}
+    .card:hover {
+        color: black !important;
+     
+    }
+
+.card1:hover .list-group-item {
+    background: black !important
+}
+
+.body-color {
+    background-color: !important;
+    color: white;
+    transform: scale(0.9);
+}
+
+    .body-color:hover {
+        background-color: !important;
+        transform: scale(1);
+        transition:all 0.5s
+    }
+.card .btn-outline-dark {
+    color: white;
+    background: #212529;
+}
+.card:hover .btn-outline-dark {  
+}
+
+
+.btn-primary {
+    border-radius: 15px !important;
+    padding: 10px !important;
+}
+
+
+.background-degradado {
+    background-color: rgba(0,0,0,0.35) !important;
+    padding: 20px;
+    border-radius: 20px !important;
+}
+
+
+

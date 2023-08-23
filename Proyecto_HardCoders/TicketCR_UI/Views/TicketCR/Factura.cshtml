@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "Factura";
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Factura</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="~/ticketCR/img/shered/favicon.png" />
+
+        <!-- Core theme CSS (includes Boo)-->
+        <link href="~/ticketCR/css/facturas/factura.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="invoice">
+        <div id="app" class="col-11">
+            <h2>Factura Electrónica</h2>
+            <img src="~/landingTicket/assets/img/logo.png" alt="" class="img-fluid">
+            
+            
+            <div class="row my-3">
+                <div>
+                    <p>TicketCR</p>
+                    <p>Dirección: calle 87, avenida 46, Curridabat, San José</p>
+                    <p>Teléfono: 8888-8888</p>
+                    <p>Correo: ticketcr@gmail.com</p>
+
+                </div>
+            </div>
+            <div class="cond">
+                <div>
+                    <h5>Facturar a</h5>
+                    <p>Dylan Porras Marin</p>
+                </div>
+                <div>
+                    <h5>Correo: </h5>
+                    <p>josueporrasmarin@gmail.com</p>
+                </div>
+                <div>
+                    <h5>N° de factura</h5>
+                    <p>030822015</p>
+                    <h5>Fecha del servicio</h5>
+                    <p>27/07/2023</p>
+                    <h5>Fecha de pago</h5>
+                    <p>27/07/2023</p>
+                </div>
+            </div>
+            <div class="row my-5">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Cant.</th>
+                            <th>Descripción</th>
+                            <th>Precio Unitario</th>
+                            <th>Importe</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2</td>
+                            <td>Boleto General Festival</td>
+                            <td>₡ 25,000.00</td>
+                            <td>₡ 50,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Boletos VIP Festival</td>
+                            <td>₡ 55,500.00</td>
+                            <td>₡ 111,000.00</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Subtotal Factura</th>
+                            <th>₡ 161,000.00</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>IVA</th>
+                            <th>₡ 20,930.00</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Total Factura</th>
+                            <th>₡ 181,930.00</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="cond">
+                <div class="col-12 mt-3">
+                    <h4>Condiciones y formas de pago</h4>
+                    <p>
+                        Paypal
+                        <br /> Número de cuenta: XXXX XXXX XXXX 8423
+                    </p>
+                </div>
+            </div>
+            <button type="button" id="btn-imprimir">Imprimir</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+﻿@model List<EventoModel>
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor Accesor;
+
+@{
+
+    Layout = "../Shared/_Dashboard.cshtml";
+    var rolU = Accesor.HttpContext.Session.GetString("userRol");
+    var anyActiveEvents = false; 
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/ticketCR/css/menuEventos/menuEventos.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header-->
+    <header>
+        <div class="container" style="text-align:center">
+                    <h1 class="display-4 fw-bolder">Menú eventos</h1>
+        </div>
+                
+    </header>
+    <!-- Section-->
+  
+    <section class="py-5">
+        <div class="container px-4 px-lg-2 mt-5">
+            <div class="row gx-4 gx-lg-4 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+       
+                    @foreach (var evento in Model)
+                    {
+
+                        if (evento.Inactivo==false)
+
+                        {
+                        anyActiveEvents = true;
+                        <div class="card-container box">
+                                <div class="card-flip" style="background-color:orangered; border-radius:5px;">
+                                    <!-- Card Front -->
+                                    <div class="card front" style="background-color:orangered; border-radius:5px;">
+                                        <img style="border-radius:5px;" class="card-img" src="@evento.Imagen1" alt="..." />
+                                        <div class="card-block" style="background-color: rgba(0,0,0,0.35); padding:5px; border-radius:5px; text-align:center">
+                                            <h5 class="fw-bolder" style="color: white;">@evento.Nombre</h5>
+                                            <p style="color: white;">@evento.FechaInicio</p>
+                                            @if (rolU == null)
+                                            {
+                                                <Button type="button" id="validations" class="btn btn-outline-light mt-auto" style="border-radius:5px;">
+                                                    Comprar de boletos.
+                                                </Button>
+
+                                            }
+                                            else
+                                            {
+                                                <button type="button" class="editar-btn" onclick="window.location.href='@Url.Action("ComprarBoletos", "TicketCR", new { id = evento.IdEvento })'">Comprar</button>
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+
+                @if (anyActiveEvents==false)
+                
+                {
+                    
+                <div style="width:100%;" class="text-center"><h1>No hay eventos disponibles en este momento</h1></div>
+                
+                }
+
+            </div>
+        </div>
+
+     
+    </section>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Bootstrap core JS-->
+    <script src="~/ticketCR/js/menuEventos/menuEventos.js"></script>
+
+</body>
+</html>

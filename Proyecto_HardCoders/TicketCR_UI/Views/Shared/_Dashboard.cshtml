@@ -1,0 +1,273 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor Accesor;
+@{
+    var nombreU = Accesor.HttpContext.Session.GetString("user");
+    var IdUsuario = Accesor.HttpContext.Session.GetString("userId"); 
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="~/ticketCR/Img/shared/favicon.png" rel="icon">
+    <title>TicketCR</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+    <link href="~/ticketCR/css/dashboard/dashboard.css" rel="stylesheet" />
+   
+</head>
+<body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand nav-top-color">
+        <!-- Navbar Brand-->
+        <a class="navbar-brand ps-3 navbar-brand-color" href="#"><img src="~/ticketCR/Img/shared/logo-ticketCR-blanco.png" /></a>
+        <!-- Sidebar Toggle-->
+        @if (nombreU != null)
+        {
+                <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        }
+        else
+        {
+                <button style="display:none;" class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
+        }
+    
+       
+        <ul class="navbar-nav ms-auto me-0 me-md-3 my-2 my-md-0">
+         
+            <li class="nav-item dropdown">
+                @if (nombreU == null)
+                {
+                    <a style="color: white;" class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> No logueado<i style="color:white;" class="fas fa-user fa-fw"></i></a>
+                }else
+                {
+                    <a style="color: white;" class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> @nombreU<i style="color:white;" class="fas fa-user fa-fw"></i></a>
+                }
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    @if (nombreU == null)
+                    {
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="TicketCR" asp-action="Login">Iniciar sesión</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="TicketCR" asp-action="LandingTicketCR">Regresar</a>
+                        </li>
+                    }else
+                    {
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="TicketCR" asp-action="PerfilUsuario">Configuración Pefil</a>
+                        </li>
+                        <li><hr class="dropdown-divider" /></li>
+
+                        <li>
+                            <a class="dropdown-item" asp-area="" asp-controller="TicketCR" asp-action="Logout">Cerrar Sesión</a>
+                        </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark  " id="sidenavAccordion">
+                <div class="sb-sidenav-menu nav-side-color ">
+                    @if (Accesor.HttpContext.Session.GetString("userRol") == "1")
+                    {
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Principal</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-theater-masks"></i></div>
+                                Eventos
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="@Url.Action("CrearEvento", "TicketCR")">Crear Eventos</a>
+                                    <a class="nav-link" href="@Url.Action("ConfiguracionEventos", "TicketCR")">Ver eventos</a>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Configuraciones</div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                 <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                                Usuarios
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="@Url.Action("AdministradorCrearUsuarios", "TicketCR")">Crear Usuarios</a>
+                                    <a class="nav-link" href="@Url.Action("AdministrarUsuarios", "TicketCR")">Ver Usuarios</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseMembresias" aria-expanded="false" aria-controls="collapseMembresias">
+                                <div class="sb-nav-link-icon"><i class="fas fa-gem"></i></div>
+                                Membresías
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseMembresias" aria-labelledby="headingMembresias" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="@Url.Action("InterfazMembresia", "TicketCR")">Crear Membresías</a>
+                                    <a class="nav-link" href="@Url.Action("MembresiasCreadas", "TicketCR")">Membresías creadas</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link" href="@Url.Action("Parametros", "TicketCR")">
+                                <div class="sb-nav-link-icon"><i class="fas fa-cogs"></i></div>
+                                Impuestos y comisiones 
+                            </a>
+                           
+                            <div class="sb-sidenav-menu-heading">Reportes</div>
+
+                            <a class="nav-link" href="@Url.Action("InformeEventos", "TicketCR")">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Reporte Eventos
+                            </a>
+                            <a class="nav-link" href="@Url.Action("InformeGanancias", "TicketCR")">
+                                <div class="sb-nav-link-icon"><i class="fas fa-money-bill"></i></div>
+                                Reporte membresías
+                            </a>
+                             </div>
+                    }
+
+                    @if (Accesor.HttpContext.Session.GetString("userRol") == "2")
+                    {
+                        {
+                            <div class="nav">
+                                <div class="sb-sidenav-menu-heading">Principal</div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-theater-masks"></i></div>
+                                    Eventos
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="@Url.Action("CrearEvento", "TicketCR")">Crear Eventos</a>
+                                        <a class="nav-link" href="@Url.Action("ConfiguracionEventos", "TicketCR")">Mis eventos</a>
+                                        <a class="nav-link" href="@Url.Action("MenuEventos", "TicketCR")">Ver eventos</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link" href="@Url.Action("AdquirirMembresia", "TicketCR")">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-gem"></i></div>
+                                    Membresías
+                                </a>
+     
+                                <div class="sb-sidenav-menu-heading">Reportes</div>
+                                <a class="nav-link" href="@Url.Action("InformeEventos", "TicketCR")">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                    Reporte Eventos
+                                </a>
+                                <a class="nav-link" href="@Url.Action("HistorialEventos", "TicketCR")">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Boletos comprados
+                                </a>
+                            </div>
+                        }
+                    }
+                    @if (Accesor.HttpContext.Session.GetString("userRol") == "3")
+                    {
+                        {
+                            <div class="nav">
+                                <div class="sb-sidenav-menu-heading">Principal</div>
+                                <a class="nav-link" href="@Url.Action("MenuEventos", "TicketCR")">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Eventos
+                                </a>
+                                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                    <nav class="sb-sidenav-menu-nested nav">
+@*                                        <a class="nav-link" href="layout-static.html">Crear Eventos</a>
+*@                                        <a class="nav-link" href="@Url.Action("MenuEventosUs", "TicketCR")">Ver eventos</a>
+                                    </nav>
+                                </div>
+         
+                                <div class="sb-sidenav-menu-heading">Reportes</div>
+
+                                <a class="nav-link" href="@Url.Action("HistorialEventos", "TicketCR")">
+                                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                    Boletos comprados
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+            </nav>
+        </div>
+   
+             <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        @RenderBody()
+                   </div>
+                </main>
+
+            @if (nombreU!=null)
+            {
+                <input type="hidden" id="IdUsuario" value="@Accesor.HttpContext.Session.GetInt32("idUser")">
+                <!--CHATBOT -->
+                <div class="chat-bar-collapsible">
+                    <button id="chat-button" type="button" class="collapsible">
+                        Asistente
+                        <i id="chat-icon" style="color: #fff;" class="fas fa-envelope"></i>
+                    </button>
+
+                    <div class="content">
+                        <div class="full-chat-block">
+                            <!-- Message Container -->
+                            <div class="outer-container">
+                                <div class="chat-container">
+                                    <!-- Messages -->
+                                    <div id="chatbox">
+                                        <h5 id="chat-timestamp"></h5>
+                                        <p id="botStarterMessage" class="botText"><span>Cargando...</span></p>
+                                    </div>
+
+                                    <!-- User input box -->
+                                    <div class="chat-bar-input-block">
+                                        <div id="userInput">
+                                            <input id="textInput" class="input-box" type="text" name="msg"
+                                                   placeholder="Presione 'Enter' para enviar.">
+                                            <p></p>
+                                        </div>
+
+                                        <div class="chat-bar-icons">
+                                            <i id="chat-icon" style="color: #333;" class="fas fa-paper-plane" onclick="sendButton()"></i>
+
+                                        </div>
+                                    </div>
+
+                                    <div id="chat-bar-bottom">
+                                        <p></p>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <!--END: CHAT BOT-->
+                
+            }
+           
+
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; TicketCR-2023</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/ticketCR/js/dashboard/dashboard.js"></script>
+    <script src="~/ticketCR/js/alertas.js"></script>
+    <script src="~/ticketCR/js/dashboard/chatBot.js"></script>
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
+

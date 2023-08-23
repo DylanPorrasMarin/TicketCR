@@ -1,0 +1,536 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout ="";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HardCoders</title>
+    <link href="~/hardcoders/assets/images/icon-equipo.png" rel="icon">
+    <!-- ===== All CSS files ===== -->
+    <link rel="stylesheet" href="~/hardcoders/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/hardcoders/assets/css/animate.css" />
+    <link rel="stylesheet" href="~/hardcoders/assets/css/lineicons.css" />
+    <link rel="stylesheet" href="~/hardcoders/assets/css/ud-styles.css" />
+</head>
+<body>
+    <!-- ====== Header Start ====== -->
+    <header class="ud-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <a class="navbar-brand" href="#">
+                            <img src="~/hardcoders/assets/images/banner/Logo-equipo.png" alt="Logo-equipo" /> <!-- <img src="assets/images/logo/logo.svg" alt="Logo" /> -->
+                        </a>
+                        <button class="navbar-toggler">
+                            <span class="toggler-icon"> </span>
+                            <span class="toggler-icon"> </span>
+                            <span class="toggler-icon"> </span>
+                        </button>
+
+                        <div class="navbar-collapse">
+                            <ul id="nav" class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="ud-menu-scroll" href="#home">Inicio</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="ud-menu-scroll" href="#about">Servicios</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="ud-menu-scroll" href="#empresa">Empresa</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="ud-menu-scroll" href="#team">Equipo</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="ud-menu-scroll" href="#contact">Contáctenos</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="navbar-btn d-none d-sm-inline-block">
+                            <a style="border-radius:15px; background-color:#000000; color:#ffff;" href="@Url.Action("LandingTicketCR", "TicketCR")" class="ud-main-btn ud-login-btn">
+                                Producto
+                            </a>
+                         
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ====== Header End ====== -->
+    <!-- ====== Hero Start ====== -->
+    <section class="ud-hero" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-hero-content wow fadeInUp" data-wow-delay=".2s">
+                        <h1 class="ud-hero-title">
+                            Somos Hard Coders
+                        </h1>
+                        <p class="ud-hero-desc">
+                            Nos apasiona la tecnología y estamos comprometidos en ofrecer soluciones innovadoras en el campo del desarrollo de software.
+                            Somos un equipo de profesionales altamente capacitados y dedicados, enfocados en impulsar el crecimiento y el éxito de nuestros clientes a través de soluciones tecnológicas personalizadas.
+                        </p>
+                    </div>
+                    <div class="ud-hero-image wow fadeInUp" data-wow-delay=".25s">
+                        <img src="~/hardcoders/assets/images/hero/hero-verde.jpg" alt="hero-verde" />                  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Hero End ====== -->
+    <!-- ====== Servicios Start ====== -->
+    <section id="about" class="ud-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="ud-about-content-wrapper">
+                        <div class="ud-about-content">
+                            <h2>Servicios</h2>
+                            <p>
+                                - Desarrollo de Software Personalizado.<br>
+                                - Construcción de Landingpages.<br>
+                                - Desarrollo de aplicaciones web.<br>
+                                - Administración de Bases de datos.<br>
+                                - Desarrollo de aplicaciones Móviles.<br>
+                                - Consultoría de TI.<br>
+                                - Desarrollo de prototipos de software
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <!-- Aquí puedes agregar tu imagen -->
+                    <img style="width:100%;" src="~/hardcoders/assets/images/img_hero.svg" alt="Descripción de la imagen">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Servicios End ====== -->
+    <!-- ====== Vision,Vision y Valores Start ====== -->
+
+    <div id="empresa" class="row g-0 align-items-center justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-10">
+            <div class="ud-single-pricing first-item wow fadeInUp"
+                 data-wow-delay=".15s">
+                <div class="ud-pricing-header">
+                    <h2>Visión</h2>
+                </div>
+                <div class="ud-pricing-body">
+                    <p>
+                        Ser la empresa líder en el país en desarrollo de software tanto en los productos como en los servicios ofrecidos.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10">
+            <div class="ud-single-pricing last-item wow fadeInUp"
+                 data-wow-delay=".15s">
+                <div class="ud-pricing-header">
+                    <h2>Valores</h2>
+                    <h6>Respeto:</h6>
+                    <p>
+                        Se brindara un trato de respeto entre todos
+                        los miembros, tanto dentro de la empresa como los clientes.<br>
+                    </p>
+                    <h6>Calidad:</h6>
+                    <p>
+                        Destacar el compromiso del equipo con la alta calidad en
+                        todas las etapas del desarrollo del software.<br>
+                    </p>
+                    <h6>Transparencia:</h6>
+                    <p>
+                        Ser claro con los clientes respecto a los
+                        productos y servicios brindados, sin esconder ningún dato que
+                        pueda ser relevante segun el caso.<br>
+                    </p>
+                    <h6>Ética:</h6>
+                    <p>
+                        Asegurarse de que todas las prácticas de decisiones están guiadas por principios
+                        éticos sólidos, con respecto a la privacidad de los datos, la seguridad<br> 
+                        y las interacciones con los clientes.
+                    </p>
+                    <h6>Colaboración y trabajo en equipo:</h6>
+                    <p>
+                        Valoramos y fomentamos la colaboración y el trabajo en equipo. 
+                        Reconocemos que el éxito de nuestros proyectos depende<br>
+                        de la participación activa y la sinergia de cada uno de los miembros."  
+                    </p>
+                </div>
+                <div class="ud-pricing-body">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-10">
+            <div class="ud-single-pricing last-item wow fadeInUp"
+                 data-wow-delay=".15s">
+                <div class="ud-pricing-header">
+                    <h2>Misión</h2>
+                </div>
+                <div class="ud-pricing-body">
+                    <p>
+                       Ofrecer los mejores servicios y productos en desarrollo de 
+                       software con la tecnología más avanzada, brindando soluciones personalizadas e innovadoras.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+    <!-- ====== Pricing End ====== -->
+    <!-- ====== Team Start ====== -->
+    <section id="team" class="ud-team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ud-section-title mx-auto text-center">
+                        <span>Núestro equipo</span>
+                        <h2>Conoce al equipo</h2>
+                        <p>
+                            Detalles de los integrantes
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-sm-3">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".1s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image">
+                                <img src="~/hardcoders/assets/images/team/chico1-team.png" alt="team" /> <!-- ====== foto integrante ====== -->
+                            </div>
+                            <img src="~/hardcoders/assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                            <img src="~/hardcoders/assets/images/team/shape-2.svg" alt="shape" class="shape shape-2" />
+                        </div>
+                        <style>
+                            .ud-faq-btn {
+                                background-color: #000000;
+                                color: #ffff;
+                                border: none;
+                                border-radius: 15px;
+                                padding: 10px 20px;
+                                font-size: 14px;
+                                cursor: pointer;
+                                transition: background-color 0.3s ease;
+                            }
+
+                                .ud-faq-btn:hover {
+                                    background-color: #C4C9C6;
+                                }
+
+                                .ud-faq-btn .icon {
+                                    margin-right: 5px;
+                                }
+                        </style>
+
+                        <div class="ud-team-info">
+                            <h5>Luis Rivera Calderón</h5>
+                            <h6>Coordinador de calidad</h6>
+                        </div>
+                        <div class="accordion">
+                            <button class="ud-faq-btn  collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTeam1">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>Ver más</span>
+                            </button>
+                            <div id="collapseTeam1" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    Correo electrónico: lriverac@ucenfotec.ac.cr
+                                    Dirección: Moravia, San José.
+                                    Teléfono: 6261-9838.
+                                    Fortalezas y debilidades individuales:
+
+                                    Fortalezas: Detallista, Responsable,Comprometido
+                                    Debilidades: Laboralmente ocupado.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-3">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".2s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image">
+                                <img src="~/hardcoders/assets/images/team/chico1-team.png" alt="team" />
+                            </div>
+                            <img src="~/hardcoders/assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                            <img src="~/hardcoders/assets/images/team/shape-2.svg" alt="shape" class="shape shape-2" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Dylan Porras Marín</h5>
+                            <h6>Scrum master</h6>
+                        </div>
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTeam2">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>Ver más</span>
+                            </button>
+                            <div id="collapseTeam2" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    Correo electrónico: dporrasma@ucenfotec.ac.cr<br>
+                                    Dirección: Cartago, Taras.<br>
+                                    Teléfono: 7251-3695.<br>
+                                    Fortalezas y debilidades:<br>
+
+                                    Responsabilidad, puntual, disciplina.<br>
+                                    Impaciencia.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-3">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".3s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image">
+                                <img src="~/hardcoders/assets/images/team/chico1-team.png" alt="team" />
+                            </div>
+                            <img src="~/hardcoders/assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                            <img src="~/hardcoders/assets/images/team/shape-2.svg" alt="shape" class="shape shape-2" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Diego Paredes Aragon</h5>
+                            <h6>Product owner</h6>
+                        </div>
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTeam3">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>Ver más</span>
+                            </button>
+                            <div id="collapseTeam3" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    Correo electrónico: dparedesa@ucenfotec.ac.cr<br>
+                                    Dirección: Cuatro Reinas, Tibás, San José.<br>
+                                    Teléfono: 8792-8875.<br>
+                                    Fortalezas y debilidades individuales:<br>
+
+                                    Fortalezas: Toma de decisiones sólida, Responsable, Dedicado.<br>
+                                    Debilidades: Nunca conforme con el resultado obtenido.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-sm-3">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".4s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image">
+                                <img src="~/hardcoders/assets/images/team/womanPerfil.png" alt="team" />
+                            </div>
+                            <img src="~/hardcoders/assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                            <img src="~/hardcoders/assets/images/team/shape-2.svg" alt="shape" class="shape shape-2" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Pamela Venegas Rodríguez</h5>
+                            <h6>Coordinador de calidad</h6>
+                        </div>
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTeam4">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>Ver más</span>
+                            </button>
+                            <div id="collapseTeam4" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    Correo electrónico: pvenegasr@ucenfotec.ac.cr<br>
+                                    Dirección: Barrio Córdoba, Zapote, San José<br>
+                                    Teléfono: 8389-3458.<br>
+                                    Fortalezas y debilidades individuales:<br>
+
+                                    Fortalezas: Comprometida, comunicativa.<br>
+                                    Debilidades: Obstinada, le cuesta delegar.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <center class="col-xl-12 col-lg-12 col-sm-12">
+                    <div class="ud-single-team wow fadeInUp" data-wow-delay=".6s">
+                        <div class="ud-team-image-wrapper">
+                            <div class="ud-team-image">
+                                <img src="~/hardcoders/assets/images/team/chico1-team.png" alt="team" />
+                            </div>
+                            <img src="~/hardcoders/assets/images/team/dotted-shape.svg" alt="shape" class="shape shape-1" />
+                            <img src="~/hardcoders/assets/images/team/shape-2.svg" alt="shape" class="shape shape-2" />
+                        </div>
+                        <div class="ud-team-info">
+                            <h5>Sebastián Taylor Madrigal</h5>
+                            <h6>Coordinador de desarrollo</h6>
+                        </div>
+                        <div class="accordion">
+                            <button class="ud-faq-btn collapsed" data-bs-toggle="collapse" data-bs-target="#collapseTeam6">
+                                <span class="icon flex-shrink-0">
+                                    <i class="lni lni-chevron-down"></i>
+                                </span>
+                                <span>Ver más</span>
+                            </button>
+                            <div id="collapseTeam6" class="accordion-collapse collapse">
+                                <div class="ud-faq-body">
+                                    Correo electrónico: staylorm@ucenfotec.ac.cr<br>
+                                    Dirección: Barrio Córdoba, Zapote, San José.<br>
+                                    Teléfono: 8322-6584.<br>
+                                    Fortalezas y debilidades individuales:<br>
+
+                                    Fortalezas: Trabajador, Responsable, Honesto.<br>
+                                    Debilidades: Disperso.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+
+            </div>
+        </div>
+    </section>
+    <!-- ====== Team End ====== -->
+    <!-- ====== Contact Start ====== -->
+    <section id="contact" class="ud-contact">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-xl-8 col-lg-7">
+                    <div class="ud-contact-content-wrapper">
+                        <div class="ud-contact-title">
+                            <h2>
+                                CONTÁCTENOS:
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5">
+                    <div class="ud-contact-form-wrapper wow fadeInUp"
+                         data-wow-delay=".2s">
+                        <form class="ud-contact-form">
+                            <div class="col-lg-12 d-flex align-items-stretch">
+                                <div class="info">
+                                    <div class="address">
+                                        <i class="bi bi-geo-alt"></i>
+                                        <h4>Ubicación:</h4>
+                                        <p>Calle Las Rosas, Barrio Escalante San José, 10101, Costa Rica</p>
+                                    </div>
+
+                                    <div class="email">
+                                        <i class="bi bi-envelope"></i>
+                                        <h4>Correo:</h4>
+                                        <p>info@hardcoders.com</p>
+                                    </div>
+
+                                    <div class="phone">
+                                        <i class="bi bi-phone"></i>
+                                        <h4>Llámanos:</h4>
+                                        <p>+506 2222 2222</p>
+                                    </div>
+                                 </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ====== Contact End ====== -->
+    <!-- ====== Footer Start ====== -->
+    <footer class="ud-footer wow fadeInUp" data-wow-delay=".15s">
+        <div class="ud-footer-widgets">
+            <div class="container">
+                <div class="row">
+                </div>
+            </div>
+        </div>
+        <div class="ud-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <ul class="ud-footer-bottom-left">
+                            <li>
+                                <a href="javascript:void(0)">Todos los derechos reservados Ⓔ</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Equipo de desarrollo</a>
+                            </li>
+                        </ul>
+                    </div>
+                   
+                    </div>
+                </div>
+            </div>
+    </footer>
+    <!-- ====== Footer End ====== -->
+    <!-- ====== Back To Top Start ====== -->
+    <a href="javascript:void(0)" class="back-to-top">
+        <i class="lni lni-chevron-up"> </i>
+    </a>
+    <!-- ====== Back To Top End ====== -->
+    <!-- ====== All Javascript Files ====== -->
+    <script src="~/hardcoders/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/hardcoders/assets/js/wow.min.js"></script>
+    <script src="~/hardcoders/assets/js/main.js"></script>
+    <script>
+        // ==== for menu scroll
+        const pageLink = document.querySelectorAll(".ud-menu-scroll");
+
+        pageLink.forEach((elem) => {
+            elem.addEventListener("click", (e) => {
+                e.preventDefault();
+                document.querySelector(elem.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth",
+                    offsetTop: 1 - 60,
+                });
+            });
+        });
+
+        // section menu active
+        function onScroll(event) {
+            const sections = document.querySelectorAll(".ud-menu-scroll");
+            const scrollPos =
+                window.pageYOffset ||
+                document.documentElement.scrollTop ||
+                document.body.scrollTop;
+
+            for (let i = 0; i < sections.length; i++) {
+                const currLink = sections[i];
+                const val = currLink.getAttribute("href");
+                const refElement = document.querySelector(val);
+                const scrollTopMinus = scrollPos + 73;
+                if (
+                    refElement.offsetTop <= scrollTopMinus &&
+                    refElement.offsetTop + refElement.offsetHeight > scrollTopMinus
+                ) {
+                    document
+                        .querySelector(".ud-menu-scroll")
+                        .classList.remove("active");
+                    currLink.classList.add("active");
+                } else {
+                    currLink.classList.remove("active");
+                }
+            }
+        }
+
+        window.document.addEventListener("scroll", onScroll);
+    </script>
+</body>
+</html>
+
+
+

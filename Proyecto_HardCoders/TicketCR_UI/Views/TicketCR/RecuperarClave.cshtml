@@ -1,0 +1,51 @@
+﻿@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/ticketCR/Img/shared/favicon.png" rel="icon">
+    <title>Recuperar Contraseña</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/ticketCR/css/recuperarClave/recuperarClave.css" rel="stylesheet" />
+  
+</head>
+<body>
+
+    <div class="container padding-bottom-3x mb-2 mt-5" >
+        <div class="row justify-content-center" style="margin-top:150px">
+            <div class="col-lg-8 col-md-10">
+                <form id="formulario-recuperacion-clave" class="card mt-4">
+                    <div class="card-body">
+                        <div class="background-degradado">
+                            <div class="form-group text-center">
+                                <h3><i class="fa fa-lock fa-4x"></i></h3>
+                                <label for="email-for-pass"><strong>Ingresa tu correo electrónico</strong></label>
+                                <input class="form-control" type="text" id="email-recuperacion">
+                                <small class="form-text text-muted">Ingresa la dirección de correo electrónico que utilizaste durante el registro en TicketCR. Luego enviaremos un enlace a esta dirección por correo electrónico.</small>
+                            </div>
+                            <center>
+                                <button type="submit" id="btn-correo-recuperacion" class="sign-btn">Enviar solicitud</button>
+                                <button type="button" class="sign-btn" onclick="window.location.href='@Url.Action("Login", "TicketCR")'">Regresar a iniciar sesión</button>
+
+                            </center>
+                        </div>
+                      
+                    </div>
+                 
+                </form>
+            </div>
+        </div>
+    </div>
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/ticketCR/js/alertas.js"></script>
+        <script src="~/ticketCR/js/site.js"></script>
+        <script src="~/ticketCR/js/recuperarClave/recuperarClave.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js" ></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
+

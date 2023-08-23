@@ -1,0 +1,94 @@
+﻿html, body {
+    height: 100%;
+}
+
+body {
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -ms-flex-align: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+card-body {
+    border-radius:30px !important;
+    background-color: orangered !important;
+}
+
+form {
+    padding-top: 10px;
+    font-size: 14px;
+    margin-top: 30px;
+}
+
+.card-title {
+    font-weight: 300;
+}
+
+.btn {
+    margin-top:5px;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align:center;
+   
+}
+
+.login-form {
+    justify-content:center;
+    width: 400px;
+    margin: 50px;
+    color:white;
+    background-color: orangered !important;
+}
+
+.sign-up {
+    text-align: center;
+    padding: 20px 0 0;
+}
+
+span {
+    font-size: 14px;
+}
+.btn-row {
+    display: flex;
+    justify-content:flex-start;
+    margin-top:20px;
+    position: relative;
+    left: 70px;
+
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 200px;
+    height: 100px;
+}
+
+.sign-btn {
+    padding: 10px 15px;
+    border-radius: 30px;
+    margin-left:3px;
+    color: black;
+    font-weight: 200;
+    font-family: "Jost", sans-serif;
+    border: 1px solid orange;
+}
+
+    .sign-btn:hover {
+        background: orange;
+        color: #fff;
+    }
+
+
+.background-degradado {
+    background-color: rgba(0,0,0,0.30) !important;
+    padding: 20px;
+    border-radius: 20px !important;
+}
